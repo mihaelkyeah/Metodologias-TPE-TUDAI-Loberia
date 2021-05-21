@@ -1,0 +1,7 @@
+/**
+Archivo creado para testear que funcione la variable {$url} en el template header.tpl
+*/
+
+body{
+    background-color: rgb(109, 252, 109);
+}
