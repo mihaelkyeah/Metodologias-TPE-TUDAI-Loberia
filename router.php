@@ -18,4 +18,4 @@ $router->setDefaultRoute('Home', 'GET', 'Controller', 'showHome');
  */
 
 // rutea
-$router->route($_REQUEST['resource'], $_SERVER['REQUEST_METHOD']);
+$router->route($_REQUEST['action'], $_SERVER['REQUEST_METHOD']);
