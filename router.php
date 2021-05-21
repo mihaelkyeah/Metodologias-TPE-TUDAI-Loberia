@@ -4,7 +4,7 @@
 require_once 'libs/router/Router.php';
 require_once 'controller/Controller.php';
 
-define('BASEURL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 // creo el ruteador usando la libreria externa
 $router = new Router();
