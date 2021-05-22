@@ -11,7 +11,7 @@ $router = new Router();
 
 // ruta por defecto !!!!!!!!!!
 $router->setDefaultRoute('Home', 'GET', 'Controller', 'showHome');
-
+$router->addRoute('request', 'POST', 'RequestController', 'postRequest');
 /**
  * Ejemplo "Caminito"
  * $router->addRoute('Game/:ID/Comment', 'POST', 'C_Comment', 'addComment');
