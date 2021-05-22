@@ -11,6 +11,7 @@ $router = new Router();
 
 // ruta por defecto !!!!!!!!!!
 $router->setDefaultRoute('Home', 'GET', 'Controller', 'showHome');
+$router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
 /**
  * Ejemplo "Caminito"

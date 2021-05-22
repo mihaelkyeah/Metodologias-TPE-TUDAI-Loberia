@@ -8,6 +8,10 @@ Class RequestController {
         $this->Model->RequestModel();
         $this->RequestView->RequestView();
     }
+
+    function showForm() {
+        $this->RequestView->showFormRequest();
+    }
     
     function postRequest() {
         if (empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['address']) || empty($_POST['phoneNumber']) || empty($_POST['category'])) {
@@ -27,7 +31,7 @@ Class RequestController {
             $success = $this->model->save($name,$lastname,$address,$phone,$category);
         }
         if($success)
-            header('Location: ' . ""); //DEFINIR
+            $this->RequestView->showFormRequest(null, "Solicitud guardada");
         else{
             $this->RequestView->showFormRequest("No se pudo guardar");
         }
