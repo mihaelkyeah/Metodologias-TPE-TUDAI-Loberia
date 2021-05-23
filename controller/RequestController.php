@@ -1,21 +1,18 @@
 <?php
 
+require_once ('controller/Controller.php');
+require_once ('model/RequestModel.php');
+require_once ('view/RequestView.php');
 
-Class RequestController {
-    private $RequestView;
-
-    public function __construct(){
-        $this->Model->RequestModel();
-        $this->RequestView->RequestView();
-    }
+Class RequestController extends Controller{
 
     function showForm() {
-        $this->RequestView->showFormRequest();
+        $this->getRequestView()->showFormRequest();
     }
     
     function postRequest() {
         if (empty($_POST['name']) || empty($_POST['lastname']) || empty($_POST['address']) || empty($_POST['phoneNumber']) || empty($_POST['category'])) {
-            $this->RequestView->showFormRequest("Faltan datos obligatorios");
+            $this->getRequestView()->showFormRequest("Faltan datos obligatorios");
             die();
         }
         $name = $_POST['name'];
@@ -26,14 +23,14 @@ Class RequestController {
 
         if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
             || $_FILES['input_name']['type'] == "image/png") {
-            $success = $this->model->save($name,$lastname,$address,$phone,$category, $_FILES['input_name']['tmp_name']);
+            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category, $_FILES['input_name']['tmp_name']);
         } else {
-            $success = $this->model->save($name,$lastname,$address,$phone,$category);
+            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category);
         }
         if($success)
-            $this->RequestView->showFormRequest(null, "Solicitud guardada");
+            $this->getRequestView()->showFormRequest(null, "Solicitud guardada");
         else{
-            $this->RequestView->showFormRequest("No se pudo guardar");
+            $this->getRequestView()->showFormRequest("No se pudo guardar");
         }
     }
 }

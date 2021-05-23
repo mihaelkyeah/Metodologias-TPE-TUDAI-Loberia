@@ -1,8 +1,9 @@
 <?php
 
 // MUCHO MUY IMPORTANTE REFERENCIAR TODOS LOS CONTROLADORES
-require_once 'libs/router/Router.php';
-require_once 'controller/Controller.php';
+require_once ('libs/router/Router.php');
+require_once ('controller/Controller.php');
+require_once ('controller/RequestController.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
