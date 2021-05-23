@@ -3,9 +3,10 @@ Archivo creado para testear que funcione la variable {$url} en el template heade
 */
 
 body{
-    background-color: rgb(109, 252, 109);
+    background-color: rgb(206, 250, 206);
 }
 
 .fondo-blanco {
-    background-color: white;
+    background-color: rgb(246, 246, 246);
 }
+
