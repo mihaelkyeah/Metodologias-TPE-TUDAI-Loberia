@@ -10,3 +10,16 @@ body{
     background-color: rgb(246, 246, 246);
 }
 
+.justify-right {
+    text-align: right;
+    align-content: right;
+}
+
+.center {
+    text-align: center;
+    align-content: center;
+}
+
+.link a:hover{
+    color: #aca;
+}

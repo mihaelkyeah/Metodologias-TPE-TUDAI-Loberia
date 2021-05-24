@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3 p-3">
-    <div class="card text-white bg-primary mb-3">
+    <div class="card text-white bg-success mb-3">
         <div class="card-header">Soliciar retiro de materiales</div>
         <div class="card-body text-center">
             <div class="fondo-blanco text-dark p-3">
@@ -30,7 +30,7 @@
                         </select>
                     </div>
                     <input type="file" name="input_name">
-                    <button type="submit" class="btn btn-primary m-2">Guardar</button>
+                    <button type="submit" class="btn btn-success m-2">Guardar</button>
                 </form>
             </div>
         </div>

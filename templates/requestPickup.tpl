@@ -1,9 +1,9 @@
 {include 'templates/header.tpl'}
 
-<div class="container-fluid">
-    <div class="alert alert-success text-center">
-        Si su domicilio se encuetra fuera de la distancia de recoleccion de materiales acerque el material en su vehiculo o busque en la seccion de viajes compartidos
-    </div>
+    <div class="container-fluid mt-2">
+        <div class="alert alert-warning text-center">
+            <b><i>Si su domicilio se encuentra fuera de la distancia de recolección de materiales, acerque el material en su vehículo o busque en la sección de viajes compartidos.</i></b>
+        </div>
     <div class="row">
         
         <div class="col-md-4">
