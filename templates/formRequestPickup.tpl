@@ -3,7 +3,7 @@
         <div class="card-header">Soliciar retiro de materiales</div>
         <div class="card-body text-center">
             <div class="fondo-blanco text-dark p-3">
-                <form action="request" method="POST">
+                <form action="request" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="name">Nombre</label>
                         <input name='name' type="text">

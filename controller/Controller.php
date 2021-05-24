@@ -4,7 +4,7 @@ require_once ('view/View.php');
 require_once ('model/RequestModel.php');
 require_once ('view/RequestView.php');
 
-Class Controller {
+Abstract Class Controller {
     private $RequestModel;
     private $View;
     private $RequestView;
@@ -15,8 +15,8 @@ Class Controller {
         $this->RequestView = new RequestView();
     }
     
-    function showHome(){
-        $this->View->showHomeView();
+    function getView(){
+        return $this->View;
     }
 
     function getRequestModel() {
@@ -27,6 +27,16 @@ Class Controller {
         return $this->RequestView;
     }
 
+    function assignFieldValue($input_value = null) {
+        if(empty($input_value) || !isset($input_value)){
+            $this->showError('Faltan datos obligatorios');
+            die();
+        }
+    }
+
+    abstract function showError($error);
+
+    abstract function showSuccess($success);
 }
     
 ?>
