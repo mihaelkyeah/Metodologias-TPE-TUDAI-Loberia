@@ -21,6 +21,13 @@
                         <input name='phoneNumber' type="text">
                     </div>
                     <div class="form-group">
+                        <label for="phoneNumber">Franja horaria</label>
+                        <select name="horario">
+                            <option value='9 a 12'>9 a 12am</option>
+                            <option value='13 a 17'>13 a 17pm</option>                           
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="category">Volumen del material a retirar</label>
                         <select name="category">
                             <option value='A'>Entra en una caja</option>

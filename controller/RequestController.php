@@ -17,14 +17,15 @@ Class RequestController extends Controller{
         $address = $this->assignFieldValue($_POST['address']);
         $phone = $this->assignFieldValue($_POST['phoneNumber']);
         $category = $this->assignFieldValue($_POST['category']);
+        $hora = $this->assignFieldValue($_POST['horario']);
 
         if($_FILES['input_name']['type'] == "image/jpg" || 
             $_FILES['input_name']['type'] == "image/jpeg" || 
             $_FILES['input_name']['type'] == "image/png" || 
             $_FILES['input_name']['type'] == "image/jpeg") {
-            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category, $_FILES['input_name']['tmp_name']);
+            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category,$hora,$_FILES['input_name']['tmp_name']);
         } else {
-            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category);
+            $success = $this->getRequestModel()->postRequest($name,$lastname,$address,$phone,$category,$hora);
         }
         if($success)
             $this->showSuccess("Solicitud guardada");
