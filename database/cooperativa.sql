@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 01:37:02
+-- Tiempo de generación: 26-05-2021 a las 02:31:47
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -43,12 +43,18 @@ CREATE TABLE `pedido_recoleccion` (
   `apellido` varchar(30) NOT NULL,
   `direccion` varchar(90) NOT NULL,
   `nro_telefono` int(11) NOT NULL,
-  `id_material_fk` int(11) NOT NULL,
   `franja_horaria` varchar(10) NOT NULL,
   `volumen` char(1) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL,
   `recolectado` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pedido_recoleccion`
+--
+
+INSERT INTO `pedido_recoleccion` (`id_pedido`, `nombre`, `apellido`, `direccion`, `nro_telefono`, `franja_horaria`, `volumen`, `imagen`, `recolectado`) VALUES
+(2, 'Oscar', 'Rodrigo', 'Avenida de Mayo 93114, Munro', 2147483647, '9 a 12', 'C', 'uploads/materials/60ad96572621d.jpg', 0);
 
 --
 -- Índices para tablas volcadas
@@ -64,8 +70,7 @@ ALTER TABLE `material`
 -- Indices de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
-  ADD PRIMARY KEY (`id_pedido`),
-  ADD KEY `FK_PEDIDO_MATERIAL` (`id_material_fk`);
+  ADD PRIMARY KEY (`id_pedido`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -75,17 +80,7 @@ ALTER TABLE `pedido_recoleccion`
 -- AUTO_INCREMENT de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `pedido_recoleccion`
---
-ALTER TABLE `pedido_recoleccion`
-  ADD CONSTRAINT `FK_PEDIDO_MATERIAL` FOREIGN KEY (`id_material_fk`) REFERENCES `material` (`id_material`);
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

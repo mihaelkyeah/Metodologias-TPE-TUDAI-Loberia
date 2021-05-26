@@ -12,7 +12,7 @@
         </p>
     </div>
     <div class="col">
-        <img src="https://lh3.googleusercontent.com/proxy/jCTYL1Q9SJc5HFe1qwRCuKvZb6DGJfpToK3VDrTNEheLEqVHhpOT_pjmgfzDRtC9csKU2kIJaX1ZTF95oc5SbnnVO1qanICHUdvY0HkU-qNgQqYH_agCEC8nywj1BTZpgW4QsqIuBFvVs4dNnFFEJz2TBcg">
+        <img src="images/panal-de-botellas.jpg">
     </div>
 </div>
 {include 'templates/footer.tpl'}
