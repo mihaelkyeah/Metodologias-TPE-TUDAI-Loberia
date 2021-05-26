@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-05-2021 a las 18:20:40
+-- Tiempo de generación: 26-05-2021 a las 19:24:29
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.4.19
 
@@ -31,6 +31,17 @@ CREATE TABLE `material` (
   `id_material` int(11) NOT NULL,
   `nombre_material` varchar(100) NOT NULL,
   `forma_entrega` varchar(512) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `material_pedido`
+--
+
+CREATE TABLE `material_pedido` (
+  `id_pedido` int(11) NOT NULL,
+  `id_material` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -69,6 +80,13 @@ ALTER TABLE `material`
   ADD PRIMARY KEY (`id_material`);
 
 --
+-- Indices de la tabla `material_pedido`
+--
+ALTER TABLE `material_pedido`
+  ADD PRIMARY KEY (`id_pedido`,`id_material`),
+  ADD KEY `FK_MATERIAL_PEDIDO` (`id_material`);
+
+--
 -- Indices de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
@@ -82,7 +100,18 @@ ALTER TABLE `pedido_recoleccion`
 -- AUTO_INCREMENT de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `material_pedido`
+--
+ALTER TABLE `material_pedido`
+  ADD CONSTRAINT `FK_MATERIAL_PEDIDO` FOREIGN KEY (`id_material`) REFERENCES `material` (`id_material`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FK_PEDIDO_MATERIALES` FOREIGN KEY (`id_pedido`) REFERENCES `pedido_recoleccion` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
