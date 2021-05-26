@@ -37,8 +37,8 @@ Abstract Class Controller {
     function assignFieldValue($input_value = null) {
         if(empty($input_value) || !isset($input_value)){
             $this->showError('Faltan datos obligatorios');
-            die();
         }
+        return $input_value;
     }
 
     abstract function showError($error);

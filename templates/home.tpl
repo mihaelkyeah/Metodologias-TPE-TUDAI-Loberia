@@ -1,7 +1,8 @@
 {include 'templates/header.tpl'}
 
 <div class="container">
-<h1>Nuestra misión</h1>
+    <h1>Nuestra misión</h1>
+
     <div class="row row-cols-2">
         <div class="col">
             <p>
@@ -27,25 +28,10 @@
                 evenirent. Nobis enim ista quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum
                 publicarum reetionis genera, status, mutationes, leges etiam et instituta ac mores civitatum
                 perscripsimus. Cur igitur, cum de re conveniat, non malumus usitate loqui?
-                Quam quidem certationem homo et acutus et diligens, Chrysippus, non contemnit totumque discrimen summi
-                boni in earum comparatione positum putat. Nam et ille apud Trabeam voluptatem animi nimiam laetitiam
-                dicit eandem, quam ille Caecilianus, qui omnibus laetitiis laetum esse se narrat. Quae si a vobis talia
-                dicerentur, qualibus Caius Marius uti poterat, ut expulsus, egens, in palude demersus tropaeorum
-                recordatione levaret dolorem suum, audirem et plane probarem. Sed quid attinet de rebus tam apertis
-                plura requirere? Hic dolor populi Romani duce et auctore Bruto causa civitati libertatis fuit, ob
-                eiusque mulieris memoriam primo anno et vir et pater eius consul est factus. Necesseque est, si quis
-                sibi ipsi inimicus est, eum quae bona sunt mala putare, bona contra quae mala, et quae appetenda fugere,
-                quae fugienda appetere, quae sine dubio vitae est eversio. Dat enim intervalla et relaxat. Nec vero
-                umquam summum bonum assequi quisquam posset, si omnia illa, quae sunt extra, quamquam expetenda, summo
-                bono continerentur. Alterum autem genus est magnarum verarumque virtutum, quas appellamus voluntarias,
-                ut prudentiam, temperantiam, fortitudinem, iustitiam et reliquas eiusdem generis. Atque ut reliqui fures
-                earum rerum, quas ceperunt, signa commutant, sic illi, ut sententiis nostris pro suis uterentur, nomina
-                tamquam rerum notas mutaverunt.
             </p>
         </div>
-        <div class="text-center col">
-            <img src="https://lh3.googleusercontent.com/proxy/jCTYL1Q9SJc5HFe1qwRCuKvZb6DGJfpToK3VDrTNEheLEqVHhpOT_pjmgfzDRtC9csKU2kIJaX1ZTF95oc5SbnnVO1qanICHUdvY0HkU-qNgQqYH_agCEC8nywj1BTZpgW4QsqIuBFvVs4dNnFFEJz2TBcg"
-                class="rounded mx-auto d-block">
+        <div class="col">
+            <img src="images/panal-de-botellas.jpg">
         </div>
     </div>
 </div>

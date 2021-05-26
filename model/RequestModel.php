@@ -8,12 +8,12 @@ Class RequestModel extends Model{
         $pathImg = null;
         if ($img) $pathImg = $this->uploadImage($img);
         
-        $query = $this->getDbConnection()->prepare('INSERT INTO request (name, lastname, address, phone_number, category, image) VALUES (?, ?, ?, ?, ?, ?, ?)');
+        $query = $this->getDbConnection()->prepare('INSERT INTO pedido_recoleccion (nombre, apellido, direccion, nro_telefono, volumen, franja_horaria, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)');
         return $query->execute([$name, $lastname, $address, $phone, $category, $hora, $pathImg]);
     }
 
     private function uploadImage($image){
-        $target = 'upload/materials/' . uniqid() . '.jpg';
+        $target = 'uploads/materials/' . uniqid() . '.jpg';
         move_uploaded_file($image, $target);
         return $target;
     }
