@@ -6,16 +6,21 @@ Class RequestModel extends Model{
 
     public function postRequest($name,$lastname,$address,$phone,$category,$hora,$img=null){
         $pathImg = null;
-        if ($img) $pathImg = $this->uploadImage($img);
+        if ($img) $pathImg = $this->getTarget();
         
         $query = $this->getDbConnection()->prepare('INSERT INTO pedido_recoleccion (nombre, apellido, direccion, nro_telefono, volumen, franja_horaria, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)');
-        return $query->execute([$name, $lastname, $address, $phone, $category, $hora, $pathImg]);
+        $success = $query->execute([$name, $lastname, $address, $phone, $category, $hora, $pathImg]);
+        if($success && isset($pathImg)) $this->saveImage($img, $pathImg);
+        return $success;
     }
 
-    private function uploadImage($image){
+    private function getTarget() {
         $target = 'uploads/materials/' . uniqid() . '.jpg';
-        move_uploaded_file($image, $target);
         return $target;
+    }
+
+    private function saveImage($image, $target) {
+        move_uploaded_file($image, $target);
     }
 
 }

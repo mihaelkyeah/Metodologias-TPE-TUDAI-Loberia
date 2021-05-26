@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 26-05-2021 a las 02:31:47
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.5
+-- Servidor: localhost
+-- Tiempo de generación: 26-05-2021 a las 18:20:40
+-- Versión del servidor: 10.4.19-MariaDB
+-- Versión de PHP: 7.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,7 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `material` (
-  `id_material` int(11) NOT NULL
+  `id_material` int(11) NOT NULL,
+  `nombre_material` varchar(100) NOT NULL,
+  `forma_entrega` varchar(512) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
