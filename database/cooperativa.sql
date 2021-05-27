@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-05-2021 a las 19:24:29
+-- Tiempo de generación: 27-05-2021 a las 19:54:28
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.4.19
 
@@ -32,6 +32,15 @@ CREATE TABLE `material` (
   `nombre_material` varchar(100) NOT NULL,
   `forma_entrega` varchar(512) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `material`
+--
+
+INSERT INTO `material` (`id_material`, `nombre_material`, `forma_entrega`) VALUES
+(1, 'Latas de aluminio', 'Secas y aplastadas'),
+(2, 'Cajas de cartón', 'Desarmadas y limpias'),
+(3, 'Envases plásticos', 'Con excepción de los de yogurt y queso blanco.');
 
 -- --------------------------------------------------------
 
