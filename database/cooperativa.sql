@@ -45,17 +45,6 @@ INSERT INTO `material` (`id_material`, `nombre_material`, `forma_entrega`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `material_pedido`
---
-
-CREATE TABLE `material_pedido` (
-  `id_pedido` int(11) NOT NULL,
-  `id_material` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `pedido_recoleccion`
 --
 
@@ -89,13 +78,6 @@ ALTER TABLE `material`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indices de la tabla `material_pedido`
---
-ALTER TABLE `material_pedido`
-  ADD PRIMARY KEY (`id_pedido`,`id_material`),
-  ADD KEY `FK_MATERIAL_PEDIDO` (`id_material`);
-
---
 -- Indices de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
@@ -111,17 +93,6 @@ ALTER TABLE `pedido_recoleccion`
 ALTER TABLE `pedido_recoleccion`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `material_pedido`
---
-ALTER TABLE `material_pedido`
-  ADD CONSTRAINT `FK_MATERIAL_PEDIDO` FOREIGN KEY (`id_material`) REFERENCES `material` (`id_material`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_PEDIDO_MATERIALES` FOREIGN KEY (`id_pedido`) REFERENCES `pedido_recoleccion` (`id_pedido`) ON DELETE CASCADE ON UPDATE CASCADE;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
