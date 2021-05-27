@@ -5,7 +5,8 @@ include_once("controller/Controller.php");
 Class MaterialsController extends Controller{
  
     public function showMaterials(){
-        $this->getMateriasView()->showMaterialsInfo();
+        $materials = $this->getMateriasModel()->getMaterialsInfo();
+        $this->getMateriasView()->showMaterialsInfo($materials);
     }
 
     function showError($error){
