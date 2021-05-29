@@ -16,6 +16,6 @@
 
 <body>
     <header>
-        <img src="images/banner.png" width="100%" height="auto">
+        <img src="images/banner.png" width="100%" height="35%">
         {include 'templates/nav.tpl'}
     </header>

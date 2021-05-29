@@ -5,6 +5,7 @@ require_once ('libs/router/Router.php');
 require_once ('controller/Controller.php');
 require_once ('controller/RequestController.php');
 require_once ('controller/HomeController.php');
+require_once ('controller/MaterialsController.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -13,6 +14,7 @@ $router = new Router();
 
 // ruta por defecto !!!!!!!!!!
 $router->setDefaultRoute('Home', 'GET', 'HomeController', 'showHome');
+$router->addRoute('info', 'GET', 'MaterialsController', 'showMaterials');
 $router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
 /**

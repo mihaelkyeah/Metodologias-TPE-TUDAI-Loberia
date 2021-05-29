@@ -1,18 +1,38 @@
 {include 'templates/header.tpl'}
 
-<h1>Nuestra misión</h1>
+<div class="container">
+    <h1>Nuestra misión</h1>
 
-<div class="row row-cols-2">
-    <div class="col">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo modo igitur, inquies, verum esse poterit omnia referri ad summum bonum, si amicítiae, si propinquitates, si reliqua externa summo bono non continentur? In quibus hoc primum est in quo admirer, cur in gravissimis rebus non delectet eos sermo patrius, cum idem fabellas Latinas ad verbum e Graecis expressas non inviti legant. Nobis enim ista quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum publicarum reetionis genera, status, mutationes, leges etiam et instituta ac mores civitatum perscripsimus. Quid, si efficio ut fateare me non modo quid sit voluptas scire-est enim iucundus motus in sensu-, sed etiam quid eam tu velis esse? Quod quidem mihi si quando dictum est-est autem dictum non parum saepe-, etsi satis clemens sum in disputando, tamen interdum soleo subirasci. Duo Reges: constructio interrete. Ergo in hac ratione tota de maximis fere rebus Stoici illos secuti sunt, ut et deos esse et quattuor ex rebus omnia constare dicerent. Quae autem natura suae primae institutionis oblita est? Nullum inveniri verbum potest quod magis idem declaret Latine, quod Graece, quam declarat voluptas. Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. Si sapiens, ne tum quidem miser, cum ab Oroete, praetore Darei, in crucem actus est. Sin dicit obscurari quaedam nec apparere, quia valde parva sint, nos quoque concedimus; Quam ob rem utique idem faciunt, ut si laevam partem neglegerent, dexteram tuerentur, aut ipsius animi, ut fecit Erillus, cognitionem amplexarentur, actionem relinquerent. Cum enim superiores, e quibus planissime Polemo, secundum naturam vivere summum bonum esse dixissent, his verbis tria significari Stoici dicunt, unum eius modi, vivere adhibentem scientiam earum rerum, quae natura evenirent. Nobis enim ista quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum publicarum reetionis genera, status, mutationes, leges etiam et instituta ac mores civitatum perscripsimus. Cur igitur, cum de re conveniat, non malumus usitate loqui? 
-            Quam quidem certationem homo et acutus et diligens, Chrysippus, non contemnit totumque discrimen summi boni in earum comparatione positum putat. Nam et ille apud Trabeam voluptatem animi nimiam laetitiam dicit eandem, quam ille Caecilianus, qui omnibus laetitiis laetum esse se narrat. Quae si a vobis talia dicerentur, qualibus Caius Marius uti poterat, ut expulsus, egens, in palude demersus tropaeorum recordatione levaret dolorem suum, audirem et plane probarem. Sed quid attinet de rebus tam apertis plura requirere? Hic dolor populi Romani duce et auctore Bruto causa civitati libertatis fuit, ob eiusque mulieris memoriam primo anno et vir et pater eius consul est factus. Necesseque est, si quis sibi ipsi inimicus est, eum quae bona sunt mala putare, bona contra quae mala, et quae appetenda fugere, quae fugienda appetere, quae sine dubio vitae est eversio. Dat enim intervalla et relaxat. Nec vero umquam summum bonum assequi quisquam posset, si omnia illa, quae sunt extra, quamquam expetenda, summo bono continerentur. Alterum autem genus est magnarum verarumque virtutum, quas appellamus voluntarias, ut prudentiam, temperantiam, fortitudinem, iustitiam et reliquas eiusdem generis. Atque ut reliqui fures earum rerum, quas ceperunt, signa commutant, sic illi, ut sententiis nostris pro suis uterentur, nomina tamquam rerum notas mutaverunt. 
-            Quod nisi ita efficitur, quae Theophrastus de fortuna, de dolore, de cruciatu corporis dixit, cum quibus coniungi vitam beatam nullo modo posse putavit, vereor, ne vera sint. Crasso, quem semel ait in vita risisse Lucilius, non contigit, ut ea re minus agelastoj ut ait idem, vocaretur. Si scieris, inquit Carneades, aspidem occulte latere uspiam, et velle aliquem inprudentem super eam assidere, cuius mors tibi emolumentum futura sit, improbe feceris, nisi monueris ne assidat, sed inpunite tamen; Huc et illuc, Torquate, vos versetis licet, nihil in hac praeclara epistula scriptum ab Epicuro congruens et conveniens decretis eius reperietis. Quarum adeo omnium sententia pronuntiabit primum de voluptate nihil esse ei loci, non modo ut sola ponatur in summi boni sede, quam quaerimus, sed ne illo quidem modo, ut ad honestatem applicetur. Portenta haec esse dicit, neque ea ratione ullo modo posse vivi; Quae cum dixissem, magis ut illum provocarem quam ut ipse loquerer, tum Triarius leniter arridens: Tu quidem, inquit, totum Epicurum paene e philosophorum choro sustulisti. Sit hoc ultimum bonorum, quod nunc a me defenditur; In qua si nihil est praeter rationem, sit in una virtute finis bonorum; Cum efficere non possit ut cuiquam, qui ipse sibi notus sit, hoc est qui suam naturam sensumque perspexerit, vacuitas doloris et voluptas idem esse videatur. Nam omnia, quae sumenda quaeque legenda aut optanda sunt, inesse debent in summa bonorum, ut is, qui eam adeptus sit, nihil praeterea desideret. Quamquam ea verba, quibus instituto veterum utimur pro Latinis, ut ipsa philosophia, ut rhetorica, dialectica, grammatica, geometria, musica, quamquam Latine ea dici poterant, tamen, quoniam usu percepta sunt, nostra ducamus. 
-            Itaque quae sunt eorum consolationes, quae cohortationes, quae etiam monita et consilia scripta ad summos viros! Erat enim apud eos, ut est rerum ipsarum natura, sic dicendi exercitatio duplex. Una voluptas e multis obscuratur in illa vita voluptaria, sed tamen ea, quamvis parva sit, pars est eius vitae, quae posita est in voluptate. Cum enim superiores, e quibus planissime Polemo, secundum naturam vivere summum bonum esse dixissent, his verbis tria significari Stoici dicunt, unum eius modi, vivere adhibentem scientiam earum rerum, quae natura evenirent. Illorum vero ista ipsa quam exilia de virtutis vi! Quam tantam volunt esse, ut beatum per se efficere possit. Nam aut privatim aliquid gerere malunt aut, qui attore animo sunt, capessunt rem publicam honoribus imperiisque adipiscendis aut totos se ad studia doctrinae conferunt. Facete M. Pompeius in foedere Numantino infitiando fuit, nec vero omnia timente, sed primum qui animi conscientiam non curet, quam scilicet comprimere nihil est negotii. Nam si +omnino nos+ neglegemus, in Aristonea vitia incidemus et peccata obliviscemurque quae virtuti ipsi principia dederimus; 
-        </p>
-    </div>
-    <div class="col">
-        <img src="images/panal-de-botellas.jpg">
+    <div class="row row-cols-2">
+        <div class="col">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quo modo igitur, inquies, verum esse poterit
+                omnia referri ad summum bonum, si amicítiae, si propinquitates, si reliqua externa summo bono non
+                continentur? In quibus hoc primum est in quo admirer, cur in gravissimis rebus non delectet eos sermo
+                patrius, cum idem fabellas Latinas ad verbum e Graecis expressas non inviti legant. Nobis enim ista
+                quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum publicarum reetionis genera,
+                status, mutationes, leges etiam et instituta ac mores civitatum perscripsimus. Quid, si efficio ut
+                fateare me non modo quid sit voluptas scire-est enim iucundus motus in sensu-, sed etiam quid eam tu
+                velis esse? Quod quidem mihi si quando dictum est-est autem dictum non parum saepe-, etsi satis clemens
+                sum in disputando, tamen interdum soleo subirasci. Duo Reges: constructio interrete. Ergo in hac ratione
+                tota de maximis fere rebus Stoici illos secuti sunt, ut et deos esse et quattuor ex rebus omnia constare
+                dicerent. Quae autem natura suae primae institutionis oblita est? Nullum inveniri verbum potest quod
+                magis idem declaret Latine, quod Graece, quam declarat voluptas. Nisi mihi Phaedrum, inquam, tu mentitum
+                aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi
+                Epicuri sententiae satis notae sunt. Si sapiens, ne tum quidem miser, cum ab Oroete, praetore Darei, in
+                crucem actus est. Sin dicit obscurari quaedam nec apparere, quia valde parva sint, nos quoque
+                concedimus; Quam ob rem utique idem faciunt, ut si laevam partem neglegerent, dexteram tuerentur, aut
+                ipsius animi, ut fecit Erillus, cognitionem amplexarentur, actionem relinquerent. Cum enim superiores, e
+                quibus planissime Polemo, secundum naturam vivere summum bonum esse dixissent, his verbis tria
+                significari Stoici dicunt, unum eius modi, vivere adhibentem scientiam earum rerum, quae natura
+                evenirent. Nobis enim ista quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum
+                publicarum reetionis genera, status, mutationes, leges etiam et instituta ac mores civitatum
+                perscripsimus. Cur igitur, cum de re conveniat, non malumus usitate loqui?
+            </p>
+        </div>
+        <div class="col">
+            <img src="images/panal-de-botellas.jpg">
+        </div>
     </div>
 </div>
 {include 'templates/footer.tpl'}
