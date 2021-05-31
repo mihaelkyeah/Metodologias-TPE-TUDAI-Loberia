@@ -21,5 +21,15 @@
 
 
 <!-- los materiales llegan en un arreglo con el nombre $materials -->
+<div class="row justify-content-center m-2">
+    <div class="alert alert-success center m-4 col-8" role="alert">
+        <h4>Video de consejos utiles</h4>
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/BofiLgHVT-w" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+    </div>
+</div>
 
 {include 'templates/footer.tpl'}
