@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-05-2021 a las 19:54:28
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 7.4.19
+-- Tiempo de generación: 11-06-2021 a las 00:29:26
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,17 +30,19 @@ SET time_zone = "+00:00";
 CREATE TABLE `material` (
   `id_material` int(11) NOT NULL,
   `nombre_material` varchar(100) NOT NULL,
-  `forma_entrega` varchar(512) DEFAULT NULL
+  `forma_entrega` varchar(512) DEFAULT NULL,
+  `img_path` varchar(255) DEFAULT NULL,
+  `video_link` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `material`
 --
 
-INSERT INTO `material` (`id_material`, `nombre_material`, `forma_entrega`) VALUES
-(1, 'Latas de aluminio', 'Secas y aplastadas'),
-(2, 'Cajas de cartón', 'Desarmadas y limpias'),
-(3, 'Envases plásticos', 'Con excepción de los de yogurt y queso blanco.');
+INSERT INTO `material` (`id_material`, `nombre_material`, `forma_entrega`, `img_path`, `video_link`) VALUES
+(1, 'Latas de aluminio', 'Secas y aplastadas', NULL, NULL),
+(2, 'Cajas de cartón', 'Desarmadas y limpias', NULL, NULL),
+(3, 'Envases plásticos', 'Con excepción de los de yogurt y queso blanco.', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -92,7 +94,7 @@ ALTER TABLE `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
