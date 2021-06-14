@@ -14,9 +14,10 @@
 
             <div id="collapseOne == {$material->id_material}" class="panel-collapse collapse in alert alert-success">
                 <div class="panel-body">
+                    <img src="{$material->img_path}" width="426px" height="240px">
                     <p>{$material->forma_entrega}</p>
                     <iframe width="426" height="240"
-                        src="{$material->url_video}" title="Video Tutorial de Preparación de {$material->nombre_material}"
+                        src="{$material->video_link}" title="Video Tutorial de Preparación de {$material->nombre_material}"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>

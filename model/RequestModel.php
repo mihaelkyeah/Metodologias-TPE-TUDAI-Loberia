@@ -15,7 +15,7 @@ Class RequestModel extends Model{
     }
 
     private function getTarget() {
-        $target = 'uploads/materials/' . uniqid() . '.jpg';
+        $target = 'uploads/requests/' . uniqid() . '.jpg';
         return $target;
     }
 
