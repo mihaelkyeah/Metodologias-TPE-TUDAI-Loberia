@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-05-2021 a las 19:54:28
+-- Tiempo de generación: 14-06-2021 a las 18:22:15
 -- Versión del servidor: 10.4.19-MariaDB
 -- Versión de PHP: 7.4.19
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `cooperativa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `deposito`
+--
+
+CREATE TABLE `deposito` (
+  `id_deposito` int(11) NOT NULL,
+  `id_recolector` int(11) NOT NULL DEFAULT 1,
+  `material` varchar(256) NOT NULL,
+  `fecha` varchar(11) NOT NULL,
+  `peso` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -67,9 +81,48 @@ CREATE TABLE `pedido_recoleccion` (
 INSERT INTO `pedido_recoleccion` (`id_pedido`, `nombre`, `apellido`, `direccion`, `nro_telefono`, `franja_horaria`, `volumen`, `imagen`, `recolectado`) VALUES
 (2, 'Oscar', 'Rodrigo', 'Avenida de Mayo 93114, Munro', 2147483647, '9 a 12', 'C', 'uploads/materials/60ad96572621d.jpg', 0);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `recolector`
+--
+
+CREATE TABLE `recolector` (
+  `id_recolector` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `apellido` varchar(100) NOT NULL,
+  `nro_dni` varchar(11) NOT NULL,
+  `fecha_nacimiento` varchar(11) NOT NULL,
+  `vehiculo` char(11) NOT NULL DEFAULT 'A'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `recolector`
+--
+
+INSERT INTO `recolector` (`id_recolector`, `nombre`, `apellido`, `nro_dni`, `fecha_nacimiento`, `vehiculo`) VALUES
+(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A');
+
+--
+-- Disparadores `recolector`
+--
+DELIMITER $$
+CREATE TRIGGER `TR_RECOLECTOR_DEPOSITO` AFTER DELETE ON `recolector` FOR EACH ROW UPDATE deposito 
+SET id_recolector = 1
+WHERE deposito.id_recolector = OLD.id_recolector
+$$
+DELIMITER ;
+
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `deposito`
+--
+ALTER TABLE `deposito`
+  ADD PRIMARY KEY (`id_deposito`),
+  ADD KEY `FK_DEPOSITO_RECOLECTOR` (`id_recolector`);
 
 --
 -- Indices de la tabla `material`
@@ -84,8 +137,20 @@ ALTER TABLE `pedido_recoleccion`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
+-- Indices de la tabla `recolector`
+--
+ALTER TABLE `recolector`
+  ADD PRIMARY KEY (`id_recolector`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `deposito`
+--
+ALTER TABLE `deposito`
+  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido_recoleccion`
@@ -93,6 +158,12 @@ ALTER TABLE `pedido_recoleccion`
 ALTER TABLE `pedido_recoleccion`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
+--
+-- AUTO_INCREMENT de la tabla `recolector`
+--
+ALTER TABLE `recolector`
+  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
