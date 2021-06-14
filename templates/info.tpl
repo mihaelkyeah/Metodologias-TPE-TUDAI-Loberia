@@ -17,11 +17,12 @@
                     <img src="{$material->img_path}" width="426px" height="240px">
                     <p>{$material->forma_entrega}</p>
                     <iframe width="426" height="240"
-                        src="{$material->video_link}" title="Video Tutorial de Preparación de {$material->nombre_material}"
+                        src="{$material->video_link}" title="YouTube video player"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
+                    <!-- :( -->
                 </div>
             </div>
         </div>

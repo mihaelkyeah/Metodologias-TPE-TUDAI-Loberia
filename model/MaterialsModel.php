@@ -1,5 +1,7 @@
 <?php
 
+header('X-Frame-Options: SAMEORIGIN');
+
 require_once ('model/Model.php');
 
 class MaterialsModel extends Model
@@ -13,3 +15,5 @@ class MaterialsModel extends Model
     }
 
 }
+
+?>
