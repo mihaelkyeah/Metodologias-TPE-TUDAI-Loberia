@@ -6,6 +6,7 @@ require_once ('controller/Controller.php');
 require_once ('controller/RequestController.php');
 require_once ('controller/HomeController.php');
 require_once ('controller/MaterialsController.php');
+require_once ('controller/StorageController.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -17,6 +18,8 @@ $router->setDefaultRoute('Home', 'GET', 'HomeController', 'showHome');
 $router->addRoute('info', 'GET', 'MaterialsController', 'showMaterials');
 $router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
+$router->addRoute('storage', 'POST', 'StorageController', 'postMaterialWeight');
+$router->addRoute('storage', 'GET', 'StorageController', 'showMaterialWeight');
 /**
  * Ejemplo "Caminito"
  * $router->addRoute('Game/:ID/Comment', 'POST', 'C_Comment', 'addComment');
