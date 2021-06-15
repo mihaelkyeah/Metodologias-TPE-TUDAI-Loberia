@@ -5,6 +5,9 @@ require_once ('model/RequestModel.php');
 require_once ('model/MaterialsModel.php');
 require_once ('view/RequestView.php');
 require_once ('view/MaterialsView.php');
+require_once ('model/StorageModel.php');
+require_once ('model/CollectorModel.php');
+require_once ('view/StorageView.php');
 
 Abstract Class Controller {
     private $RequestModel;
@@ -12,6 +15,9 @@ Abstract Class Controller {
     private $View;
     private $RequestView;
     private $MaterialstView;
+    private $StorageModel;
+    private $CollectorModel;
+    private $StorageView;
 
     public function __construct(){
         $this->View = new View();
@@ -19,6 +25,9 @@ Abstract Class Controller {
         $this->RequestView = new RequestView();
         $this->MaterialsView = new MaterialsView();
         $this->MaterialsModel = new MaterialsModel();
+        $this->StorageModel = new StorageModel();
+        $this->CollectorModel = new CollectorModel();
+        $this->StorageView = new StorageView();
     }
     
     function getView(){
@@ -39,6 +48,18 @@ Abstract Class Controller {
 
     function getMateriasModel() {
         return $this->MaterialsModel;
+    }
+
+    function getStorageView() {
+        return $this->StorageView;
+    }
+
+    function getStorageModel() {
+        return $this->StorageModel;
+    }
+
+    function getCollectorModel() {
+        return $this->CollectorModel;
     }
 
     function assignFieldValue($input_value = null) {
