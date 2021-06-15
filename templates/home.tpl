@@ -31,7 +31,7 @@
             </p>
         </div>
         <div class="col">
-            <img src="images/panal-de-botellas.jpg">
+            <img src="images/panal-de-botellas.jpg" class="img_home">
         </div>
     </div>
 </div>

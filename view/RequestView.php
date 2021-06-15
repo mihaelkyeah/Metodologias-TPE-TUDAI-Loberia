@@ -18,11 +18,6 @@ class RequestView extends View
     {
         $this->getSmarty()->assign('title', 'request list');
         $this->getSmarty()->assign('list', $params);
-        echo ('TODO mostrar lista de pedidos en tpl <br><br>');
-        var_dump($params);
-        // $this->getSmarty()->assign('error', $error);
-        // $this->getSmarty()->assign('success', $success);
-        // $this->getSmarty()->display('templates/requestPickup.tpl');
+        $this->getSmarty()->display('templates/requestList.tpl');
     }
-
 }
