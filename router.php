@@ -17,6 +17,8 @@ $router->setDefaultRoute('Home', 'GET', 'HomeController', 'showHome');
 $router->addRoute('info', 'GET', 'MaterialsController', 'showMaterials');
 $router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
+$router->addRoute('request/list', 'GET', 'RequestController', 'showList');
+
 /**
  * Ejemplo "Caminito"
  * $router->addRoute('Game/:ID/Comment', 'POST', 'C_Comment', 'addComment');

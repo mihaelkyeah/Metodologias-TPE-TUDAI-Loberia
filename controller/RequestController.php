@@ -34,6 +34,11 @@ Class RequestController extends Controller{
         }
     }
 
+    function showList(){
+        $list = $this->getRequestModel()->getList();
+        $this->getRequestView()->showRequestList($list);
+    }
+
     function showError($error){
         $this->getRequestView()->showFormRequest($error);
         die();
