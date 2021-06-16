@@ -1,7 +1,7 @@
 {include 'templates/header.tpl'}
 
 <div class="container">
-    <h1>Nuestra misión</h1>
+    <h1 class="font-staat p-2">Nuestra misión</h1>
 
     <div class="row row-cols-2">
         <div class="col">
@@ -22,16 +22,11 @@
                 Epicuri sententiae satis notae sunt. Si sapiens, ne tum quidem miser, cum ab Oroete, praetore Darei, in
                 crucem actus est. Sin dicit obscurari quaedam nec apparere, quia valde parva sint, nos quoque
                 concedimus; Quam ob rem utique idem faciunt, ut si laevam partem neglegerent, dexteram tuerentur, aut
-                ipsius animi, ut fecit Erillus, cognitionem amplexarentur, actionem relinquerent. Cum enim superiores, e
-                quibus planissime Polemo, secundum naturam vivere summum bonum esse dixissent, his verbis tria
-                significari Stoici dicunt, unum eius modi, vivere adhibentem scientiam earum rerum, quae natura
-                evenirent. Nobis enim ista quaesita, a nobis descripta, notata, praecepta sunt, omniumque rerum
-                publicarum reetionis genera, status, mutationes, leges etiam et instituta ac mores civitatum
-                perscripsimus. Cur igitur, cum de re conveniat, non malumus usitate loqui?
+                ipsius animi, ut fecit Erillus, cognitionem amplexarentur, actionem relinquerent.
             </p>
         </div>
         <div class="col">
-            <img src="images/panal-de-botellas.jpg">
+            <img src="images/panal-de-botellas.jpg" class="img_home">
         </div>
     </div>
 </div>

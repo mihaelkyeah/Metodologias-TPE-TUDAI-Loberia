@@ -9,7 +9,7 @@ class MaterialsView extends View
     {
         $this->getSmarty()->assign('title', 'Info');
         $this->getSmarty()->assign('materials', $materials);
-        $this->getSmarty()->display('templates/info.tpl');
+        $this->getSmarty()->display('templates/info2.tpl');
     }
     public function mostrarPanelAdminMateriales($materials)
     {
