@@ -1,43 +1,50 @@
-<div class="col-md-6 offset-md-3 p-3">
-    <div class="card text-white bg-success mb-3">
-        <div class="card-header">Soliciar retiro de materiales</div>
-        <div class="card-body text-center">
-            <div class="fondo-blanco text-dark p-3">
+<div class="col-md-6 offset-md-3 p-2">
+    <div class="card text-white mb-3">
+        <div class="card-header font-staat div-form">Soliciar retiro de materiales</div>
+        <div class="div-form-body text-center p-3">
+            <div class="text-dark p-1">
                 <form action="request" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="name">Nombre</label>
-                        <input name='name' type="text">
+                    <div>
+                        <label class="input-group font-staat" for="name">Nombre</label>
+                        <input type="text" name='name' class="form-control" placeholder="Nombre"
+                            aria-label="First name">
                     </div>
-                    <div class="form-group">
-                        <label for="lastname">Apellido</label>
-                        <input name='lastname' type="text">
+                    <div>
+                        <label class="input-group font-staat" for="lastname">Apellido</label>
+                        <input name='lastname' type="text" class="form-control" placeholder="Apellido"
+                            aria-label="First name">
                     </div>
-                    <div class="form-group">
-                        <label for="address">Direccion</label>
-                        <input name='address' type="text">
+                    <div>
+                        <label class="input-group font-staat" for="address">Dirección</label>
+                        <input name='address' type="text" class="form-control" placeholder="Dirección"
+                            aria-label="First name">
                     </div>
-                    <div class="form-group">
-                        <label for="phoneNumber">Telefono</label>
-                        <input name='phoneNumber' type="text">
+                    <div>
+                        <label class="input-group font-staat" for="phoneNumber">Telefono</label>
+                        <input name='phoneNumber' type="text" class="form-control" placeholder="Telefono"
+                            aria-label="First name">
                     </div>
-                    <div class="form-group">
-                        <label for="phoneNumber">Franja horaria</label>
-                        <select name="horario">
+                    <div>
+                        <label class="input-group font-staat" for="phoneNumber">Franja horaria</label>
+                        <select class="form-select" name=" horario">
                             <option value='9 a 12'>9 a 12am</option>
-                            <option value='13 a 17'>13 a 17pm</option>                           
+                            <option value='13 a 17'>13 a 17pm</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="category">Volumen del material a retirar</label>
-                        <select name="category">
+                    <div>
+                        <label class="input-group font-staat" for="category">Volumen del material a retirar</label>
+                        <select class="form-select" name="category">
                             <option value='A'>Entra en una caja</option>
                             <option value='B'>Entra en el baul de un auto</option>
                             <option value='C'>Entra en la caja de una camioneta</option>
                             <option value='D'>Es necesario un camion</option>
                         </select>
                     </div>
-                    <input type="file" name="input_name">
-                    <button type="submit" class="btn btn-success m-2">Guardar</button>
+                    <div class="p-3">
+                        <label class="input-group font-staat" for="category">Adjuntar Imagen</label>
+                        <input class="form-control" name="input_name" type="file" id="formFile">
+                    </div>
+                    <button type="submit" class="btn btn-success m-1">Guardar</button>
                 </form>
             </div>
         </div>

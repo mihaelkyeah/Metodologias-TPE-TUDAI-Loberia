@@ -16,7 +16,7 @@
         </thead>
         <tbody>
             {foreach from=$list item=l}
-                <tr class="table-active bg-dark text-light">
+                <tr class="td__color">
                     <td>{$l->nombre}</td>
                     <td>{$l->apellido}</td>
                     <td>{$l->direccion}</td>
@@ -24,7 +24,7 @@
                     <td>{$l->nro_telefono}</td>
                     <td class="text-warning"><strong>{$l->volumen}</strong></td>
                     {if {$l->imagen}!=null}
-                        <td><button type="button" class="btn btn-success" data-bs-toggle="modal"
+                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal{$l->id_pedido}">
                                 imagen
                             </button></td>
@@ -33,13 +33,13 @@
                     {/if}
 
                     {if {$l->recolectado}==0}
-                        <td class="text-success">
+                        <td class="color-success">
                             <span class="material-icons">
                                 done_all
                             </span>
                         </td>
                     {else}
-                        <td class="text-danger">
+                        <td class="color-danger">
                             <span class="material-icons">
                                 remove_done
                             </span>
