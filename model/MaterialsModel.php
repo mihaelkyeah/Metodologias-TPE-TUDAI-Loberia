@@ -14,6 +14,11 @@ class MaterialsModel extends Model
         return $query->fetchAll(PDO::FETCH_OBJ); 
     }
 
+    public function delete($id){
+        $query = $this->getDbConnection()->prepare('DELETE FROM material WHERE id_material = ?');
+        $query->execute([$id]);
+    }
+
 }
 
 ?>
