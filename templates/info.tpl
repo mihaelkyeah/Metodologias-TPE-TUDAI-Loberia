@@ -14,9 +14,9 @@
                     <div id="flush-collapseOne{$material->id_material}" class="accordion-collapse collapse"
                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                     <div class="div-accordion-body text-center">
-                        <div class="d-grid gap-2 d-md-block p-2">
-                            <button class="btn btn-danger" type="button" href="#">Eliminar ❌</button>
-                        </div>
+                        <form class="d-grid gap-2 d-md-block p-2" method="POST" action="info/DELETE/{$material->id_material}">
+                            <button class="btn btn-danger" type="submit" >Eliminar ❌</button>
+                        </form>
                         {if {$material->img_path}!=null}
                             <img src="{$material->img_path}" width="426px" height="240px">
                             {/if}

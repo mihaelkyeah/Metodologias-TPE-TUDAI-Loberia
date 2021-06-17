@@ -21,6 +21,8 @@ $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
 $router->addRoute('request/list', 'GET', 'RequestController', 'showList');
 $router->addRoute('storage', 'POST', 'StorageController', 'postMaterialWeight');
 $router->addRoute('storage', 'GET', 'StorageController', 'showMaterialWeight');
+$router->addRoute('info/DELETE/:ID', 'POST', 'MaterialsController', 'deleteMaterial');
+
 
 /**
  * Ejemplo "Caminito"

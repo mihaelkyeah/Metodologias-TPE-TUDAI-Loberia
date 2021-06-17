@@ -46,7 +46,7 @@ Abstract Class Controller {
         return $this->MaterialsView;
     }
 
-    function getMateriasModel() {
+    function getMaterialsModel() {
         return $this->MaterialsModel;
     }
 
