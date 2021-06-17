@@ -1,6 +1,6 @@
 <div class="col-md-6 offset-md-3 p-3">
     <div class="card text-white bg-success mb-3">
-        <div class="card-header">Soliciar retiro de materiales</div>
+        <div class="card-header">Añadir materiales aceptados</div>
         <div class="card-body text-center">
             <div class="fondo-blanco text-dark p-3">
                 <form action="info" method="POST" enctype="multipart/form-data">
