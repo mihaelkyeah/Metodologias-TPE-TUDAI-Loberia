@@ -27,6 +27,13 @@ Class MaterialsController extends Controller{
         header('Location: ' . BASE_URL . 'info');
     }
 
+    public function updateMaterial($param = []){
+        $id =intval($param[':ID']);
+        $materials = $this->getMaterialsModel()->getMaterialsInfo();
+        $dates = $this->getMaterialsModel()->getMaterial($id);
+        $this->getMateriasView()->showFormEditMaterials($materials, $dates);
+    }
+
 }
 
 ?>

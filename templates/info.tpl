@@ -8,7 +8,10 @@
                         <button class="collapsed button-success p-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne{$material->id_material}" aria-expanded="false"
                             aria-controls="flush-collapseOne">
-                            {$material->nombre_material}
+                            <form class="d-grid gap-2 d-md-block p-2" method="POST" action="editar_material//UPDATE/{$material->id_material}">
+                           {$material->nombre_material} |<button class="btn btn-danger" type="submit" >EDITAR</button> 
+                         
+                        </form>
                         </button>
                     </div>
                     <div id="flush-collapseOne{$material->id_material}" class="accordion-collapse collapse"
