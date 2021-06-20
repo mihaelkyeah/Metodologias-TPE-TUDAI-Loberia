@@ -1,3 +1,4 @@
+{include 'header.tpl'}
 <div class="col-md-6 offset-md-3 p-3">
     <div class="card text-white bg-success mb-3">
         <div class="card-header">Añadir materiales aceptados</div>
@@ -14,7 +15,7 @@
                     </div>
                     <div class="form-group">
                         <label for="img">Imagen</label>
-                        <input name='img' type="text">
+                        <input name='img' type="file">
                     </div>
                     <div class="form-group">
                         <label for="url">Video tutorial</label>
@@ -37,3 +38,4 @@
         {$success}
     </div>
 {/if}
+{include 'footer.tpl'}

@@ -16,6 +16,8 @@ $router = new Router();
 // ruta por defecto !!!!!!!!!!
 $router->setDefaultRoute('Home', 'GET', 'HomeController', 'showHome');
 $router->addRoute('info', 'GET', 'MaterialsController', 'showMaterials');
+$router->addRoute('info', 'POST', 'MaterialsController', 'newMaterial');
+$router->addRoute('info/new', 'GET', 'MaterialsController', 'showFormNewMaterial');
 $router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
 $router->addRoute('request/list', 'GET', 'RequestController', 'showList');
