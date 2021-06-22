@@ -3,8 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
-
--- Tiempo de generación: 11-06-2021 a las 00:29:26
+-- Tiempo de generación: 21-06-2021 a las 01:45:39
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 7.4.15
 
@@ -35,6 +34,16 @@ CREATE TABLE `deposito` (
   `fecha` varchar(11) NOT NULL,
   `peso` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `deposito`
+--
+
+INSERT INTO `deposito` (`id_deposito`, `id_recolector`, `material`, `fecha`, `peso`) VALUES
+(1, 2, 'carton', '23/24/25', 20),
+(2, 2, 'carton', '23/24/25', 20),
+(3, 1, 'vidrio', '11/4/2222', 5),
+(4, 1, 'madera', '1/2/23', 72);
 
 -- --------------------------------------------------------
 
@@ -104,7 +113,8 @@ CREATE TABLE `recolector` (
 --
 
 INSERT INTO `recolector` (`id_recolector`, `nombre`, `apellido`, `nro_dni`, `fecha_nacimiento`, `vehiculo`) VALUES
-(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A');
+(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A'),
+(2, 'oscar', 'rodrigo', '22334455', '22/23/1995', 'C');
 
 --
 -- Disparadores `recolector`
@@ -153,7 +163,13 @@ ALTER TABLE `recolector`
 -- AUTO_INCREMENT de la tabla `deposito`
 --
 ALTER TABLE `deposito`
-  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `material`
+--
+ALTER TABLE `material`
+  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido_recoleccion`
@@ -161,9 +177,11 @@ ALTER TABLE `deposito`
 ALTER TABLE `pedido_recoleccion`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
+--
+-- AUTO_INCREMENT de la tabla `recolector`
+--
 ALTER TABLE `recolector`
-  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
+  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

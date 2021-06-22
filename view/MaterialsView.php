@@ -17,4 +17,11 @@ class MaterialsView extends View
         $this->getSmarty()->assign('materials', $materials);
         $this->getSmarty()->display('templates/adminView.tpl');
     }
+
+    public function showFormNewMaterial($error=null, $success=null){
+        $this->getSmarty()->assign('title', 'AdminPanel');
+        $this->getSmarty()->assign('error', $error);
+        $this->getSmarty()->assign('success', $success);
+        $this->getSmarty()->display('templates/formNewMaterial.tpl');
+    }
 }
