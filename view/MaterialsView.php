@@ -18,10 +18,9 @@ class MaterialsView extends View
         $this->getSmarty()->display('templates/adminView.tpl');
     }
 
-    public function showFormEditMaterials($materials, $dates){
-       // var_dump($dates);die;
-        $this->getSmarty()->assign('materials', $materials);
-        $this->getSmarty()->assign('datos', $dates);
+    public function showFormEditMaterials($data){
+    //    var_dump($data);die;
+        $this->getSmarty()->assign('datos', $data);
         $this->getSmarty()->display('templates/showFormEditMaterials.tpl');
     }
 }

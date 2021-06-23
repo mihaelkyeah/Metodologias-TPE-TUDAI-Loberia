@@ -4,31 +4,25 @@
         <div class="card-header">Editar material</div>
         <div class="card-body text-center">
             <div class="fondo-blanco text-dark p-3">
-                <form action="editar" method="POST" enctype="multipart/form-data">
+                <form action="editar/{$datos->id_material}" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="collector">Material</label>
-                        <select name="collector">
-                            {foreach from=$materials item=material}
-                                <option >{$material->nombre_material}</option>
-                            {/foreach}
-                        </select>
-                    </div>
-                     <div class="form-group">
-                        {foreach from=$datos item=detalle}
+                            <div class="form-group">
+                                <label for="dates">Nombre</label>
+                                <input type="text" name="name" placeholder="{$datos->nombre_material}">
+                            </div>
                             <div class="form-group">
                                 <label for="dates">Forma de entrega</label>
-                                <input type="text" name="forma_entrega" value="{$detalle->forma_entrega}">
+                                <input type="text" name="delivery" placeholder="{$datos->forma_entrega}">
                             </div>
                             <div class="form-group">
                                 <label for="dates">URL</label>
-                                <input type="text" name="video" value="{$detalle->video_link}">
+                                <input type="text" name="video" placeholder="{$datos->video_link}">
                             </div>
                             <div class="form-group">
                                 <label for="dates">imagen</label>
-                               <input type="file" name="input_name" id="imageToUpload">
+                                <input type="file" name="imageToUpload">
                             </div>   
-                        {/foreach}
-                       </div>   
+                    </div>   
                     <button type="submit" class="btn btn-success m-2">Guardar</button>
                 </form>
             </div>

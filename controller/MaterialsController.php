@@ -27,13 +27,34 @@ Class MaterialsController extends Controller{
         header('Location: ' . BASE_URL . 'info');
     }
 
-    public function updateMaterial($param = []){
+    public function showUpdateMaterial($param = []){
         $id =intval($param[':ID']);
-        $materials = $this->getMaterialsModel()->getMaterialsInfo();
-        $dates = $this->getMaterialsModel()->getMaterial($id);
-        $this->getMateriasView()->showFormEditMaterials($materials, $dates);
+        $data = $this->getMaterialsModel()->getMaterial($id);
+        $this->getMateriasView()->showFormEditMaterials($data);
     }
 
-}
+    function updateMaterial($param = []) 
+    { 
+        $id_material = intval($param[':ID']);
+        $name = $this->assignFieldValue($_POST['name']);
+        $delivery = $this->assignFieldValue($_POST['delivery']);
+        $video=$this->assignFieldValue($_POST['video']);
 
+            if ($_FILES['imageToUpload']['type'] == "image/jpg" ||
+                $_FILES['imageToUpload']['type'] == "image/jpeg" ||
+                $_FILES['imageToUpload']['type'] == "image/png" ||
+                $_FILES['imageToUpload']['type'] == "image/jpeg")
+            {
+                $success = $this->getMaterialsModel()->updateMaterial($id_material,$name,$delivery,$video, $_FILES['imageToUpload']['tmp_name']);
+            }
+            else
+                $success = $this->getMaterialsModel()->updateMaterial($id_material,$name,$delivery,$video,NULL);
+            if($success)
+                $this->showSuccess("Solicitud guardada");
+            else{
+                $this->showError("No se pudo guardar");
+            }
+        
+    }
+}
 ?>

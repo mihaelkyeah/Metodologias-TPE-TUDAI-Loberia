@@ -22,7 +22,6 @@ Class Model{
     public function getDbConnection() {
         return $this->db;
     }
-
 }
 
 ?>
