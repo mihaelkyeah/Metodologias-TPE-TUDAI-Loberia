@@ -8,7 +8,7 @@ class RequestView extends View
 
     public function showFormRequest($error = null, $success = null)
     {
-        $this->getSmarty()->assign('title', 'request');
+        $this->getSmarty()->assign('title', 'Solicitar Recolección');
         $this->getSmarty()->assign('error', $error);
         $this->getSmarty()->assign('success', $success);
         $this->getSmarty()->display('templates/requestPickup.tpl');
@@ -16,7 +16,7 @@ class RequestView extends View
 
     public function showRequestList($params)
     {
-        $this->getSmarty()->assign('title', 'request list');
+        $this->getSmarty()->assign('title', 'Lista Solicitudes');
         $this->getSmarty()->assign('list', $params);
         $this->getSmarty()->display('templates/requestList.tpl');
     }

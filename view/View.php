@@ -1,6 +1,6 @@
 <?php
 
-require_once ('libs/smarty/Smarty.class.php');
+require_once('libs/smarty/Smarty.class.php');
 
 class View
 {
@@ -24,8 +24,7 @@ class View
 
     public function showHomeView()
     {
-        $this->getSmarty()->assign('title', 'home');
+        $this->getSmarty()->assign('title', 'C.R.U.T');
         $this->getSmarty()->display('templates/home.tpl');
     }
-
 }

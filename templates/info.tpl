@@ -5,23 +5,25 @@
             <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div>
                     <div class="div-accordion" id="flush-headingOne">
-                        <button class="collapsed button-success p-2" type="button" data-bs-toggle="collapse"
+                        <button class="collapsed btn-grad p-2" type="button" data-bs-toggle="collapse"
                             data-bs-target="#flush-collapseOne{$material->id_material}" aria-expanded="false"
                             aria-controls="flush-collapseOne">
-                            <form class="d-grid gap-2 d-md-block p-2" method="POST" action="editar_material/{$material->id_material}">
-                           {$material->nombre_material} |<button class="btn btn-danger" type="submit" >EDITAR</button> 
-                         
-                        </form>
-                        </button>
+                            {$material->nombre_material} </button>
                     </div>
                     <div id="flush-collapseOne{$material->id_material}" class="accordion-collapse collapse"
-                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="div-accordion-body text-center">
-                        <form class="d-grid gap-2 d-md-block p-2" method="POST" action="info/DELETE/{$material->id_material}">
-                            <button class="btn btn-danger" type="submit" >Eliminar ❌</button>
-                        </form>
-                        {if {$material->img_path}!=null}
-                            <img src="{$material->img_path}" width="426px" height="240px">
+                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="div-accordion-body text-center text-light">
+                            <div class="row text-center">
+                                <form class="col-6 p-2" method="POST" action="editar_material/{$material->id_material}">
+                                    <button class="btn btn-warning font-staat" type="submit">EDITAR 📝</button>
+                                </form>
+                                <form class=" col-6 p-2" method="POST" action="info/DELETE/{$material->id_material}">
+                                    <button class="btn btn-danger font-staat" type="submit">Eliminar ❌</button>
+                                </form>
+                            </div>
+                            <hr />
+                            {if {$material->img_path}!=null}
+                                <img src="{$material->img_path}" width="426px" height="240px">
                             {/if}
                             <h3 class="font-staat p-2">{$material->forma_entrega}</h3>
                             {if {$material->video_link}!=null}

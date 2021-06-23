@@ -32,36 +32,39 @@ class MaterialsController extends Controller
         header('Location: ' . BASE_URL . 'info');
     }
 
-    public function showUpdateMaterial($param = []){
-        $id =intval($param[':ID']);
+    public function showUpdateMaterial($param = [])
+    {
+        $id = intval($param[':ID']);
         $data = $this->getMaterialsModel()->getMaterial($id);
         $this->getMateriasView()->showFormEditMaterials($data);
     }
 
-    function updateMaterial($param = []) 
-    { 
+    function updateMaterial($param = [])
+    {
         $id_material = intval($param[':ID']);
-        $name = $this->assignFieldValue($_POST['name']);
-        $delivery = $this->assignFieldValue($_POST['delivery']);
-        $video=$this->assignFieldValue($_POST['video']);
+        $name = $_POST['name'];
+        $delivery = $_POST['delivery'];
+        $video = $_POST['video'];
 
-            if ($_FILES['imageToUpload']['type'] == "image/jpg" ||
+        if ($name != "" && $delivery != "") {
+            if (
+                $_FILES['imageToUpload']['type'] == "image/jpg" ||
                 $_FILES['imageToUpload']['type'] == "image/jpeg" ||
                 $_FILES['imageToUpload']['type'] == "image/png" ||
-                $_FILES['imageToUpload']['type'] == "image/jpeg")
-            {
-                $success = $this->getMaterialsModel()->updateMaterial($id_material,$name,$delivery,$video, $_FILES['imageToUpload']['tmp_name']);
+                $_FILES['imageToUpload']['type'] == "image/jpeg"
+            ) {
+                $success = $this->getMaterialsModel()->updateMaterial($id_material, $name, $delivery, $video, $_FILES['imageToUpload']['tmp_name']);
+            } else
+                $success = $this->getMaterialsModel()->updateMaterial($id_material, $name, $delivery, $video, NULL);
+            if ($success) {
+                $data = $this->getMaterialsModel()->getMaterial($id_material);
+                $this->showMaterials();
             }
-            else
-                $success = $this->getMaterialsModel()->updateMaterial($id_material,$name,$delivery,$video,NULL);
-            if($success)
-                $this->showSuccess("Solicitud guardada");
-            else{
-                $this->showError("No se pudo guardar");
-            }
-        
+        } else {
+            $data = $this->getMaterialsModel()->getMaterial($id_material);
+            $this->getMateriasView()->showFormEditMaterials($data, "Por Favor Recuerde Que los Campos NOMBRE y FORMA DE ENTREGA no pueden estar vacios ", NULL);
+        }
     }
-}
 
     public function showFormNewMaterial()
     {
@@ -70,13 +73,15 @@ class MaterialsController extends Controller
 
     public function newMaterial()
     {
-        if(isset($_POST['name']))  $name = $_POST['name'];
-        if(isset($_POST['condition']))  $condition = $_POST['condition'];
+        if (isset($_POST['name']))  $name = $_POST['name'];
+        if (isset($_POST['condition']))  $condition = $_POST['condition'];
 
-        if ($_FILES['img']['type'] == "image/jpg" ||
+        if (
+            $_FILES['img']['type'] == "image/jpg" ||
             $_FILES['img']['type'] == "image/jpeg" ||
             $_FILES['img']['type'] == "image/png" ||
-            $_FILES['img']['type'] == "image/jpeg") {
+            $_FILES['img']['type'] == "image/jpeg"
+        ) {
             $success = $this->getMaterialsModel()->newMaterial($name, $condition, $_FILES['img']['tmp_name']);
         } else {
             $success = $this->getMaterialsModel()->newMaterial($name, $condition);
@@ -86,7 +91,5 @@ class MaterialsController extends Controller
         } else {
             $this->getMateriasView()->showFormNewMaterial("error al registrar nuevo material");
         }
-
     }
 }
-?>

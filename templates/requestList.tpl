@@ -32,7 +32,7 @@
                         <td>---</td>
                     {/if}
 
-                    {if {$l->recolectado}==0}
+                    {if {$l->recolectado}==1}
                         <td class="color-success">
                             <span class="material-icons">
                                 done_all

@@ -1,11 +1,19 @@
 <?php
 
-require_once ('controller/Controller.php');
+require_once('controller/Controller.php');
 
-Class AdminController extends Controller{
+class AdminController extends Controller
+{
 
-   
+    function showError($error)
+    {
+        var_dump($error);
+        die();
+    }
 
+    function showSuccess($success)
+    {
+        var_dump($success);
+        die();
+    }
 }
-    
-?>

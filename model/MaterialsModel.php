@@ -47,7 +47,10 @@ class MaterialsModel extends Model
     }
 
     public function newMaterial($name, $condition, $img = NULL){
-        if ($img) $pathImg = $this->getTarget();
+        if ($img) 
+            $pathImg = $this->getTarget();
+        else
+            $pathImg = NULL;
         $query = $this->getDbConnection()->prepare('INSERT INTO material (nombre_material, forma_entrega, img_path, video_link) VALUES (?, ?, ?, ?)');
         $success = $query->execute([$name,$condition, $pathImg, $_POST['url']]);
         if($success && isset($pathImg)) $this->saveImage($img, $pathImg);
@@ -55,5 +58,3 @@ class MaterialsModel extends Model
     }
 
 }
-
-?>
