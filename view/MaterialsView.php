@@ -19,8 +19,14 @@ class MaterialsView extends View
     }
 
     public function showFormEditMaterials($data){
-    //    var_dump($data);die;
         $this->getSmarty()->assign('datos', $data);
         $this->getSmarty()->display('templates/showFormEditMaterials.tpl');
+
+    public function showFormNewMaterial($error=null, $success=null){
+        $this->getSmarty()->assign('title', 'AdminPanel');
+        $this->getSmarty()->assign('error', $error);
+        $this->getSmarty()->assign('success', $success);
+        $this->getSmarty()->display('templates/formNewMaterial.tpl');
+
     }
 }

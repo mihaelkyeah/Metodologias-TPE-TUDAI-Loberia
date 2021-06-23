@@ -22,6 +22,7 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item font-staat" href="request/list">Lista Solicitudes</a></li>
                         <li><a class="dropdown-item font-staat" href="storage">Storage</a></li>
+                        <li><a class="dropdown-item font-staat" href="info/new">newMaterial</a></li>
                     </ul>
                 </li>
                 <!-- Fin Menu Desplegable-->
