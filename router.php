@@ -24,6 +24,9 @@ $router->addRoute('request/list', 'GET', 'RequestController', 'showList');
 $router->addRoute('storage', 'POST', 'StorageController', 'postMaterialWeight');
 $router->addRoute('storage', 'GET', 'StorageController', 'showMaterialWeight');
 $router->addRoute('info/DELETE/:ID', 'POST', 'MaterialsController', 'deleteMaterial');
+$router->addRoute('editar_material/:ID', 'POST', 'MaterialsController', 'showUpdateMaterial');
+
+$router->addRoute('editar/:ID', 'POST', 'MaterialsController', 'updateMaterial');
 
 
 /**
