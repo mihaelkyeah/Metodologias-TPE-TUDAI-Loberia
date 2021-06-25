@@ -9,19 +9,19 @@
                         <label class="input-group" for="material">
                             <span class="color-danger">*</span>
                             Material</label>
-                        <input name='material' type="text" class="form-control" required>
+                        <input name='material' type="text" class="form-control font-input" maxlength="256" required>
                     </div>
                     <div class="font-staat">
                         <label class="input-group" for="weight">
                             <span class="color-danger">*</span>
                             Peso</label>
-                        <input name='weight' type="text" class="form-control" required>
+                        <input name='weight' type="number" class="form-control font-input" required>
                     </div>
                     <div class="font-staat">
                         <label class="input-group" for="date">
                             <span class="color-danger">*</span>
                             Fecha</label>
-                        <input name='date' type="text" class="form-control" required>
+                        <input name='date' type="text" class="form-control font-input" required maxlength="11">
                     </div>
                     <div>
                         <label class="input-group font-staat" for="collector">recolector</label>

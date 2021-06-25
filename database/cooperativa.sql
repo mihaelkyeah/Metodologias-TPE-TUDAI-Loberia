@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 21-06-2021 a las 01:45:39
--- Versión del servidor: 10.4.17-MariaDB
--- Versión de PHP: 7.4.15
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 25-06-2021 a las 20:53:51
+-- Versión del servidor: 10.4.11-MariaDB
+-- Versión de PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,16 +35,6 @@ CREATE TABLE `deposito` (
   `peso` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `deposito`
---
-
-INSERT INTO `deposito` (`id_deposito`, `id_recolector`, `material`, `fecha`, `peso`) VALUES
-(1, 2, 'carton', '23/24/25', 20),
-(2, 2, 'carton', '23/24/25', 20),
-(3, 1, 'vidrio', '11/4/2222', 5),
-(4, 1, 'madera', '1/2/23', 72);
-
 -- --------------------------------------------------------
 
 --
@@ -64,7 +54,7 @@ CREATE TABLE `material` (
 --
 
 INSERT INTO `material` (`id_material`, `nombre_material`, `forma_entrega`, `img_path`, `video_link`) VALUES
-(1, 'Latas de aluminio', 'Secas y aplastadas', NULL, NULL),
+(1, 'Latas de aluminio', 'Secas y aplastadas', 'uploads/requests/60d54f80d753d.jpg', 'https://www.youtube.com/embed/HDaYrXtKiLM'),
 (2, 'Cajas de cartón', 'Desarmadas y limpias', NULL, NULL),
 (3, 'Envases plásticos', 'Con excepción de los de yogurt y queso blanco.', NULL, NULL);
 
@@ -79,7 +69,7 @@ CREATE TABLE `pedido_recoleccion` (
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `direccion` varchar(90) NOT NULL,
-  `nro_telefono` int(11) NOT NULL,
+  `nro_telefono` bigint(30) NOT NULL,
   `franja_horaria` varchar(10) NOT NULL,
   `volumen` char(1) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL,
@@ -91,7 +81,9 @@ CREATE TABLE `pedido_recoleccion` (
 --
 
 INSERT INTO `pedido_recoleccion` (`id_pedido`, `nombre`, `apellido`, `direccion`, `nro_telefono`, `franja_horaria`, `volumen`, `imagen`, `recolectado`) VALUES
-(2, 'Oscar', 'Rodrigo', 'Avenida de Mayo 93114, Munro', 2147483647, '9 a 12', 'C', 'uploads/materials/60ad96572621d.jpg', 0);
+(2, 'Oscar', 'Rodrigo', 'Avenida de Mayo 93114, Munro', 239123456789, '9 a 12', 'C', 'uploads/materials/60ad96572621d.jpg', 0),
+(10, 'Ruperto', 'Goñi', 'Carabobo 6543', 3516538517, '13 a 17', 'D', 'uploads/requests/60d551c41c9b4.jpg', 0),
+(13, 'Fran', 'Hernández', 'Calle Sosoroso nº 65536', 2262123456, '9 a 12', 'D', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -113,8 +105,7 @@ CREATE TABLE `recolector` (
 --
 
 INSERT INTO `recolector` (`id_recolector`, `nombre`, `apellido`, `nro_dni`, `fecha_nacimiento`, `vehiculo`) VALUES
-(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A'),
-(2, 'oscar', 'rodrigo', '22334455', '22/23/1995', 'C');
+(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A');
 
 --
 -- Disparadores `recolector`
@@ -163,25 +154,25 @@ ALTER TABLE `recolector`
 -- AUTO_INCREMENT de la tabla `deposito`
 --
 ALTER TABLE `deposito`
-  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_material` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `pedido_recoleccion`
 --
 ALTER TABLE `pedido_recoleccion`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `recolector`
 --
 ALTER TABLE `recolector`
-  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

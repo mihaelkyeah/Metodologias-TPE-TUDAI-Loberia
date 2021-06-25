@@ -19,21 +19,21 @@
                         <label class="input-group" for="name">
                             <span class="color-danger">*</span>
                             Nombre</label>
-                        <input name='name' type="text" class="form-control" required>
+                        <input name='name' type="text" class="form-control font-input" placeholder="Nombre" required>
                     </div>
                     <div>
                         <label class="input-group" for="condition">
                             <span class="color-danger">*</span>
                             Condicion de entrega</label>
-                        <input name='condition' type="text" class="form-control" required>
+                        <input name='condition' type="text" class="form-control font-input" placeholder="P/ej, secas y aplastadas" required>
                     </div>
                     <div class="form-group">
                         <label for="img" class="input-group">Imagen</label>
-                        <input name='img' type="file" class="form-control">
+                        <input name='img' type="file" class="form-control font-input">
                     </div>
                     <div class="form-group">
                         <label for="url" class="input-group">Link Video Tutorial</label>
-                        <input name='url' type="text" class="form-control">
+                        <input name='url' type="text" class="form-control font-input">
                     </div>
 
                     <button type="submit" class="btn btn-success m-2">Guardar</button>
