@@ -18,49 +18,50 @@
                         <label class="input-group" for="name">
                             <span class="color-danger">*</span>
                             Nombre</label>
-                        <input type="text" name='name' class="form-control" placeholder="Nombre"
-                            aria-label="First name">
+                        <input type="text" name='name' class="form-control font-input" placeholder="Nombre"
+                            aria-label="First name" maxlength="30">
                     </div>
                     <div>
                         <label class="input-group" for="lastname">
                             <span class="color-danger">*</span>
                             Apellido</label>
-                        <input name='lastname' type="text" class="form-control" placeholder="Apellido"
-                            aria-label="First name">
+                        <input name='lastname' type="text" class="form-control font-input" placeholder="Apellido"
+                            aria-label="First name" maxlength="30">
                     </div>
                     <div>
                         <label for="address" class="input-group">
                             <span class="color-danger">*</span>
                             Dirección
                         </label>
-
-                        <input name='address' type="text" class="form-control" placeholder="Dirección"
-                            aria-label="First name">
+                        <input name='address' type="text" class="form-control font-input" placeholder="Dirección"
+                            aria-label="First name" maxlength="90">
                     </div>
                     <div>
-                        <label class="input-group" for="phoneNumber">Telefono</label>
-                        <input name='phoneNumber' type="text" class="form-control" placeholder="Telefono"
-                            aria-label="First name">
+                        <label class="input-group" for="phoneNumber">
+                        <span class="color-danger">*</span>
+                        Teléfono</label>
+                        <input name='phoneNumber' type="number" class="form-control font-input" placeholder="Telefono"
+                            aria-label="First name" min="0" max="2147483647" step="1" required>
                     </div>
                     <div>
                         <label class="input-group" for="phoneNumber">Franja horaria</label>
-                        <select class="form-select" name=" horario">
+                        <select class="form-select font-input" name=" horario">
                             <option value='9 a 12'>9 a 12 am</option>
                             <option value='13 a 17'>13 a 17 pm</option>
                         </select>
                     </div>
                     <div>
                         <label class="input-group" for="category">Volumen del material a retirar</label>
-                        <select class="form-select" name="category">
+                        <select class="form-select font-input" name="category">
                             <option value='A'>Entra en una caja</option>
                             <option value='B'>Entra en el baul de un auto</option>
                             <option value='C'>Entra en la caja de una camioneta</option>
-                            <option value='D'>Es necesario un camion</option>
+                            <option value='D'>Es necesario un camión</option>
                         </select>
                     </div>
-                    <div class="p-3">
+                    <div class="p-2">
                         <label class="input-group" for="category">Adjuntar Imagen</label>
-                        <input class="form-control" name="input_name" type="file" id="formFile">
+                        <input class="form-control font-input" name="input_name" type="file" id="formFile">
                     </div>
                     <button type="submit" class="btn btn-success m-1">Guardar</button>
                 </form>

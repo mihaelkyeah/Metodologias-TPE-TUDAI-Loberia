@@ -10,23 +10,23 @@
                             <label class="input-group" for="dates">
                                 <span class="color-danger">*</span>
                                 Nombre</label>
-                            <input type="text" name="name" class="form-control" placeholder="{$datos->nombre_material}"
+                            <input type="text" name="name" class="form-control font-input" value="{$datos->nombre_material}"
                                 required>
                         </div>
                         <div>
                             <label class="input-group" for="dates">
                                 <span class="color-danger">*</span>
                                 Forma de entrega</label>
-                            <input type="text" name="delivery" class="form-control"
-                                placeholder="{$datos->forma_entrega}" required>
+                            <input type="text" name="delivery" class="form-control font-input"
+                                value="{$datos->forma_entrega}" required>
                         </div>
                         <div>
                             <label class="input-group" for="dates">URL</label>
-                            <input type="text" name="video" class="form-control" placeholder="{$datos->video_link}">
+                            <input type="text" name="video" class="form-control font-input" value="{$datos->video_link}">
                         </div>
                         <div>
                             <label class="input-group" for="dates">Imagen</label>
-                            <input type="file" name="imageToUpload" class="form-control">
+                            <input type="file" name="imageToUpload" class="form-control font-input">
                         </div>
                     </div>
                     <input type="submit" class="btn btn-success m-2" value="GUARDAR">

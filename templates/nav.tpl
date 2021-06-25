@@ -44,7 +44,7 @@
                                 </span>
                             </a></li>
                         <hr />
-                        <li><a class="dropdown-item font-staat" href="storage">Deposito Materiales
+                        <li><a class="dropdown-item font-staat" href="storage">Depósito Materiales
                                 <span class="material-icons">
                                     inventory
                                 </span></a></li>

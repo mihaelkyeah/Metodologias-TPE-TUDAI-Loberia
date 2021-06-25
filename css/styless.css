@@ -24,6 +24,11 @@ body {
     rgb(178, 206, 178),
     rgb(116, 116, 116)
   );
+  /* sombra muy leve de 1px de desfasaje */
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.005);
+  /* suavizado de texto */
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 .justify-right {
@@ -128,6 +133,11 @@ body {
   font-family: "Staatliches", cursive, sans-serif;
   font-size: larger;
 }
+
+.font-input {
+  font-family: "Allerta";
+}
+
 
 /**========= btn gradiente =========*/
 
