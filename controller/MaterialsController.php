@@ -79,9 +79,8 @@ class MaterialsController extends Controller
 
         if (isset($_POST['name']))  $name = $_POST['name'];
         if (isset($_POST['condition']))  $condition = $_POST['condition'];
-        if (isset($_POST['url'])) $url = $_POST['url'];
-
-        $url = $this->parseYoutubeURL($url);
+        if (isset($_POST['url']))
+            $url = $this->parseYoutubeURL($_POST['url']);
 
         if (
             $_FILES['img']['type'] == "image/jpg" ||
@@ -113,7 +112,7 @@ class MaterialsController extends Controller
         if(str_contains($retorno,"?") || str_contains($retorno,"&")) {
             $this->showError("Esta URL de video no es válida. Quite los parámetros GET adicionales.");
         }
-        else if(!str_contains($retorno,"youtube")) {
+        else if(!empty($retorno) && !str_contains($retorno,"youtube")) {
             $this->showError("Esta URL no es de un video en YouTube.");
         }
         return $retorno;
