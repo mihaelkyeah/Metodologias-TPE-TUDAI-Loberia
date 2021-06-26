@@ -14,7 +14,7 @@ class MaterialsController extends Controller
 
     public function showError($error)
     {
-        $this->getRequestView()->showFormRequest($error);
+        $this->getView()->showError($error);
         die();
     }
 
@@ -46,6 +46,8 @@ class MaterialsController extends Controller
         $delivery = $_POST['delivery'];
         $video = $_POST['video'];
 
+        $video = $this->parseYoutubeURL($video);
+
         if ($name != "" && $delivery != "") {
             if (
                 $_FILES['imageToUpload']['type'] == "image/jpg" ||
@@ -73,8 +75,13 @@ class MaterialsController extends Controller
 
     public function newMaterial()
     {
+        $url = null;
+
         if (isset($_POST['name']))  $name = $_POST['name'];
         if (isset($_POST['condition']))  $condition = $_POST['condition'];
+        if (isset($_POST['url'])) $url = $_POST['url'];
+
+        $url = $this->parseYoutubeURL($url);
 
         if (
             $_FILES['img']['type'] == "image/jpg" ||
@@ -82,14 +89,33 @@ class MaterialsController extends Controller
             $_FILES['img']['type'] == "image/png" ||
             $_FILES['img']['type'] == "image/jpeg"
         ) {
-            $success = $this->getMaterialsModel()->newMaterial($name, $condition, $_FILES['img']['tmp_name']);
+            $success = $this->getMaterialsModel()->newMaterial($name, $condition, $_FILES['img']['tmp_name'], $url);
         } else {
-            $success = $this->getMaterialsModel()->newMaterial($name, $condition);
+            $success = $this->getMaterialsModel()->newMaterial($name, $condition, null, $url);
         }
         if ($success) {
             $this->getMateriasView()->showFormNewMaterial(NULL, "el material se registro con exito");
         } else {
             $this->getMateriasView()->showFormNewMaterial("error al registrar nuevo material");
         }
+    }
+
+    public function parseYoutubeURL($url) {
+        $retorno = $url;
+        for($i = 0; $i < 2; $i++) {
+            if(str_contains($url,".com/watch?v="))
+                $retorno = str_replace(".com/watch?v=",".com/embed/",$url);
+            else if(str_contains($url,"youtu.be/"))
+                $retorno = str_replace("youtu.be/","youtube.com/embed/",$url);
+            else if(str_contains($url,"m.youtube.com"))
+                $retorno = str_replace("m.youtube.com","youtube.com",$url);
+        }
+        if(str_contains($retorno,"?") || str_contains($retorno,"&")) {
+            $this->showError("Esta URL de video no es válida. Quite los parámetros GET adicionales.");
+        }
+        else if(!str_contains($retorno,"youtube")) {
+            $this->showError("Esta URL no es de un video en YouTube.");
+        }
+        return $retorno;
     }
 }

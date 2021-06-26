@@ -88,6 +88,14 @@ body {
   color: var(--white);
 }
 
+/**========== Custom Containers ==========*/
+
+.pantalla_errrorrr {
+  /* background-color: #eeddbb; */
+  background: linear-gradient(to top, #ccbb99, #ffeebb, #ccbb99);
+
+}
+
 /**========== Custom Components ==========*/
 
 .button-success {
