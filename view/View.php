@@ -27,4 +27,10 @@ class View
         $this->getSmarty()->assign('title', 'C.R.U.T');
         $this->getSmarty()->display('templates/home.tpl');
     }
+
+    public function showError($error) {
+        $this->getSmarty()->assign('title', 'C.R.U.T - ERROR');
+        $this->getSmarty()->assign('errorMsg', $error);
+        $this->getSmarty()->display('templates/error.tpl');
+    }
 }
