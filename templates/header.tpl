@@ -19,7 +19,7 @@
     <!--Icons Google Fonts-->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Style css carpete-local-->
-    <link rel="stylesheet" href="css/styless.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>

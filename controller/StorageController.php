@@ -11,7 +11,8 @@ class StorageController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->collectors = $this->getCollectorModel()->getCollectors(); 
+        $this->collectors = $this->getCollectorModel()->getCollectors();
+        $this->materials  = $this->getMaterialsModel()->getMaterialsInfo();
     }
 
     public function postMaterialWeight()
@@ -31,17 +32,16 @@ class StorageController extends Controller
 
     public function showMaterialWeight()
     {
-        $this->getStorageView()->showStorageFormView($this->collectors);
+        $this->getStorageView()->showStorageFormView($this->collectors, $this->materials);
     }
 
     public function showError($error)
     {
-        $this->getStorageView()->showStorageFormView($this->collectors, $error);
+        $this->getStorageView()->showStorageFormView($this->collectors, $this->materials, $error);
     }
 
     public function showSuccess($success)
     {
-        $this->getStorageView()->showStorageFormView($this->collectors, null, $success);
+        $this->getStorageView()->showStorageFormView($this->collectors, $this->materials, null, $success);
     }
-
 }

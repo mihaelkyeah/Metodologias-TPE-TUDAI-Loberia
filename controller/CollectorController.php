@@ -1,9 +1,15 @@
 <?php
 
-require_once ('controller/Controller.php');
+require_once('controller/Controller.php');
 
-Class CollectorController extends Controller{
+class CollectorController extends Controller
+{
 
+    function showListCollectors()
+    {
+        $collectors = $this->getCollectorModel()->getCollectors();
+        $this->getCollectorView()->showListCollectors($collectors);
+    }
 
     function showError($error)
     {
@@ -16,5 +22,4 @@ Class CollectorController extends Controller{
         var_dump($success);
         die();
     }
-
 }

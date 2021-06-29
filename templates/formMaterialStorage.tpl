@@ -5,22 +5,28 @@
         <div class="card-body text-center div-form-body">
             <div class="fondo-blanco text-dark p-3">
                 <form action="storage" method="POST">
+
                     <div class="font-staat">
                         <label class="input-group" for="material">
                             <span class="color-danger">*</span>
                             Material</label>
-                        <input name='material' type="text" class="form-control font-input" maxlength="256" required>
+                        <select class="form-select font-input" name="material">
+                            {foreach from=$materials item=m}
+                                <option value='{$m->nombre_material}'>{$m->nombre_material}</option>
+                            {/foreach}
+                        </select>
                     </div>
+
                     <div class="font-staat">
                         <label class="input-group" for="weight">
                             <span class="color-danger">*</span>
-                            Peso</label>
+                            Peso Kg.</label>
                         <input name='weight' type="number" class="form-control font-input" required>
                     </div>
                     <div class="font-staat">
                         <label class="input-group" for="date">
                             <span class="color-danger">*</span>
-                            Fecha</label>
+                            Fecha Entrega</label>
                         <input name='date' type="text" class="form-control font-input" required maxlength="11">
                     </div>
                     <div>

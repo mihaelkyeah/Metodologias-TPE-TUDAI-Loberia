@@ -17,11 +17,21 @@
         <tbody>
             {foreach from=$list item=l}
                 <tr class="td__color">
-                    <td>{$l->nombre}</td>
-                    <td>{$l->apellido}</td>
-                    <td>{$l->direccion}</td>
-                    <td>{$l->franja_horaria}</td>
-                    <td>{$l->nro_telefono}</td>
+                    <td>
+                        <p class="blockquote">{$l->nombre}</p>
+                    </td>
+                    <td>
+                        <p class="blockquote">{$l->apellido}</p>
+                    </td>
+                    <td>
+                        <p class="blockquote">{$l->direccion}</p>
+                    </td>
+                    <td>
+                        <p class="blockquote">{$l->franja_horaria}</p>
+                    </td>
+                    <td>
+                        <p class="blockquote">{$l->nro_telefono}</p>
+                    </td>
                     <td class="text-warning"><strong>{$l->volumen}</strong></td>
                     {if {$l->imagen}!=null}
                         <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"

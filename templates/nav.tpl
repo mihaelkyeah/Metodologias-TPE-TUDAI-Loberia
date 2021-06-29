@@ -24,30 +24,34 @@
                 </li>
                 <!--Menu Desplegable-->
                 <li class="nav-item dropdown navbar-nav p-1">
-                    <a class="nav-link dropdown-toggle btn-dark" href="#" id="navbarDropdown" role="button"
+                    <a class="nav-link dropdown-toggle btn-dark font-staat" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">
-                        <strong>ADMINISTRACION</strong>
+                        ADMINISTRACION
                         <span class="material-icons">
                             settings
                         </span>
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item font-staat" href="request/list">Lista Solicitudes
-                                <span class="material-icons">
+                        <li><a class="dropdown-item font-staat" href="request/list"> <span class="material-icons">
                                     list
-                                </span></a></li>
+                                </span> Solicitudes
+                            </a></li>
 
-                        <li><a class="dropdown-item font-staat" href="info/new">Agregar Material
-                                <span class="material-icons">
+                        <li><a class="dropdown-item font-staat" href="info/new"><span class="material-icons">
                                     add
-                                </span>
+                                </span> Agregar Material
+
                             </a></li>
                         <hr />
-                        <li><a class="dropdown-item font-staat" href="storage">Depósito Materiales
-                                <span class="material-icons">
+                        <li><a class="dropdown-item font-staat" href="storage"> <span class="material-icons">
                                     inventory
-                                </span></a></li>
+                                </span> Depósito Materiales
+                            </a></li>
+                        <li><a class="dropdown-item font-staat" href="collectors"> <span class="material-icons">
+                                    manage_accounts
+                                </span> RECOLECTORES
+                            </a></li>
                     </ul>
                 </li>
                 <!-- Fin Menu Desplegable-->

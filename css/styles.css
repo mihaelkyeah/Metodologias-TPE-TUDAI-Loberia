@@ -25,7 +25,7 @@ body {
     rgb(116, 116, 116)
   );
   /* sombra muy leve de 1px de desfasaje */
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.005);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.005);
   /* suavizado de texto */
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -68,7 +68,13 @@ body {
 /**========== Table Color ==========*/
 
 .td__color {
-  background-color: var(--grey);
+  /* background-color: var(--grey); */
+  background: linear-gradient(to right, #1a7c36d0, #051309c2);
+  color: var(--white);
+}
+
+.td__color2 {
+  background: linear-gradient(to right, #1a7c36d0, #051309c2);
   color: var(--white);
 }
 
@@ -93,7 +99,6 @@ body {
 .pantalla_errrorrr {
   /* background-color: #eeddbb; */
   background: linear-gradient(to top, #ccbb99, #ffeebb, #ccbb99);
-
 }
 
 /**========== Custom Components ==========*/
@@ -145,7 +150,6 @@ body {
 .font-input {
   font-family: "Allerta";
 }
-
 
 /**========= btn gradiente =========*/
 
