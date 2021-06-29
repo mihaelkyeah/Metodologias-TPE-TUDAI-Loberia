@@ -1,0 +1,180 @@
+/**
+Archivo creado para testear que funcione la variable {$url} en el template header.tpl
+*/
+
+:root {
+  --green: rgb(198, 255, 188);
+  --green-success: #3cc411;
+  --green-chill: #64d062;
+  --green-div: #20981e;
+  --red-danger: #e40505;
+  --grey: #343634;
+  --white: #ffffff;
+  --gradient: linear-gradient(
+    rgb(3, 112, 30),
+    rgb(31, 206, 75),
+    rgb(3, 112, 30)
+  );
+}
+
+body {
+  /* background-color: var(--green); */
+  background-image: linear-gradient(
+    rgb(116, 116, 116),
+    rgb(178, 206, 178),
+    rgb(116, 116, 116)
+  );
+  /* sombra muy leve de 1px de desfasaje */
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.005);
+  /* suavizado de texto */
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.justify-right {
+  text-align: right;
+  align-content: right;
+}
+
+.center {
+  text-align: center;
+  align-content: center;
+}
+
+.link a:hover {
+  color: var(--grenn);
+}
+
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: "";
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/**========== Table Color ==========*/
+
+.td__color {
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+/**========== Custom Colors ==========*/
+.color-success {
+  color: var(--green-success);
+}
+.color-danger {
+  color: var(--red-danger);
+}
+
+.color-success-chill {
+  color: var(--green-chill);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+/**========== Custom Containers ==========*/
+
+.pantalla_errrorrr {
+  /* background-color: #eeddbb; */
+  background: linear-gradient(to top, #ccbb99, #ffeebb, #ccbb99);
+
+}
+
+/**========== Custom Components ==========*/
+
+.button-success {
+  border: none;
+  border-radius: 15px 50px 20px;
+  border-bottom: solid 4px var(--white);
+  font-family: "Staatliches", cursive, sans-serif;
+  font-size: 160%;
+  width: 100%;
+  color: var(--white);
+  background-color: var(--gradient);
+}
+
+.div-accordion {
+  margin: 0em 15%;
+}
+
+.div-accordion-body {
+  border-radius: 10px;
+  background: linear-gradient(to top, #2e702e, #53cc4872, #459625af);
+  background-color: var(--green-chill);
+  padding: 10px;
+  margin: 0em 15%;
+}
+
+.div-form {
+  background: linear-gradient(to top, #35a235, #238c19);
+}
+
+.div-form-body {
+  background: linear-gradient(to top, #56ab2f, #a8e063, #56ab2f);
+  border: solid 4px var(--green-div);
+}
+.input-form {
+  border: none;
+  width: 90%;
+  margin: auto;
+  margin-left: 2px;
+  border-radius: 2px;
+}
+/**========== Custom Fonts ==========*/
+.font-staat {
+  font-family: "Staatliches", cursive, sans-serif;
+  font-size: larger;
+}
+
+.font-input {
+  font-family: "Allerta";
+}
+
+
+/**========= btn gradiente =========*/
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #56ab2f 0%,
+    #a8e063 51%,
+    #56ab2f 100%
+  );
+}
+.btn-grad {
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 20px rgba(56, 114, 23, 0.768);
+  display: block;
+
+  border-radius: 10px 20px 10px;
+  font-family: "Staatliches", cursive, sans-serif;
+  font-size: 160%;
+  width: 100%;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}

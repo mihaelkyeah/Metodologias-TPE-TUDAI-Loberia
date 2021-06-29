@@ -1,11 +1,12 @@
 <?php
 
 // MUCHO MUY IMPORTANTE REFERENCIAR TODOS LOS CONTROLADORES
-require_once ('libs/router/Router.php');
-require_once ('controller/Controller.php');
-require_once ('controller/RequestController.php');
-require_once ('controller/HomeController.php');
-require_once ('controller/MaterialsController.php');
+require_once('libs/router/Router.php');
+require_once('controller/Controller.php');
+require_once('controller/RequestController.php');
+require_once('controller/HomeController.php');
+require_once('controller/MaterialsController.php');
+require_once('controller/StorageController.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -15,8 +16,19 @@ $router = new Router();
 // ruta por defecto !!!!!!!!!!
 $router->setDefaultRoute('Home', 'GET', 'HomeController', 'showHome');
 $router->addRoute('info', 'GET', 'MaterialsController', 'showMaterials');
+$router->addRoute('info', 'POST', 'MaterialsController', 'newMaterial');
+$router->addRoute('info/new', 'GET', 'MaterialsController', 'showFormNewMaterial');
 $router->addRoute('request', 'GET', 'RequestController', 'showForm');
 $router->addRoute('request', 'POST', 'RequestController', 'postRequest');
+$router->addRoute('request/list', 'GET', 'RequestController', 'showList');
+$router->addRoute('storage', 'POST', 'StorageController', 'postMaterialWeight');
+$router->addRoute('storage', 'GET', 'StorageController', 'showMaterialWeight');
+$router->addRoute('info/DELETE/:ID', 'POST', 'MaterialsController', 'deleteMaterial');
+$router->addRoute('editar_material/:ID', 'POST', 'MaterialsController', 'showUpdateMaterial');
+$router->addRoute('editar/:ID', 'POST', 'MaterialsController', 'updateMaterial');
+$router->addRoute('error/:ERROR', 'GET', 'controller', 'viewPageError');
+
+
 /**
  * Ejemplo "Caminito"
  * $router->addRoute('Game/:ID/Comment', 'POST', 'C_Comment', 'addComment');

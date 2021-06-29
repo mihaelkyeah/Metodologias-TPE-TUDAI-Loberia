@@ -15,7 +15,7 @@ Class RequestModel extends Model{
     }
 
     private function getTarget() {
-        $target = 'uploads/materials/' . uniqid() . '.jpg';
+        $target = 'uploads/requests/' . uniqid() . '.jpg';
         return $target;
     }
 
@@ -23,6 +23,10 @@ Class RequestModel extends Model{
         move_uploaded_file($image, $target);
     }
 
-}
+    public function getList(){
+        $query = $this->getDbConnection()->prepare('SELECT * FROM pedido_recoleccion');
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ); 
+    }
 
-?>
+}
