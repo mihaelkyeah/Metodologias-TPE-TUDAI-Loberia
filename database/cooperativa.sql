@@ -78,7 +78,7 @@ CREATE TABLE `pedido_recoleccion` (
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
   `direccion` varchar(90) NOT NULL,
-  `nro_telefono` int(30) NOT NULL,
+  `nro_telefono` bigint(30) NOT NULL,
   `franja_horaria` varchar(10) NOT NULL,
   `volumen` char(1) NOT NULL,
   `imagen` varchar(255) DEFAULT NULL,
