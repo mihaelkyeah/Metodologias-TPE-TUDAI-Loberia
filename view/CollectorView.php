@@ -12,4 +12,10 @@ class CollectorView extends View
         $this->getSmarty()->assign('collectors', $collectors);
         $this->getSmarty()->display('templates/showCollectors.tpl');
     }
+
+    public function showFormEditCollector($collector) {
+        $this->getSmarty()->assign('title', 'Editar recolector');
+        $this->getSmarty()->assign('collector', $collector);
+        $this->getSmarty()->display('templates/formEditCollector.tpl');
+    }
 }
