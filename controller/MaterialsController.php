@@ -59,6 +59,7 @@ class MaterialsController extends Controller
             } else
                 $success = $this->getMaterialsModel()->updateMaterial($id_material, $name, $delivery, $video, NULL);
             if ($success) {
+                // ver si $data hace falta en esta bifurcación
                 $data = $this->getMaterialsModel()->getMaterial($id_material);
                 $this->showMaterials();
             }

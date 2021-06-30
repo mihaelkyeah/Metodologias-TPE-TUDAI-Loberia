@@ -23,7 +23,10 @@
                         <p class="blockquote">{$c->nro_dni}</p>
                     </td>
                     <td>----btn----</td>
-                    <td>----btn----</td>
+                    <td><form class="p-2" method='POST' action="collectors/editar/{$c->id_recolector}">
+                            <button type=submit class='btn btn-warning font-staat'>Editar 📝</button>
+                        </form>
+                    </td>
                     <td>----btn----</td>
                 </tr>
             {/foreach}
