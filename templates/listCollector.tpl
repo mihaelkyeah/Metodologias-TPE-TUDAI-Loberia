@@ -22,7 +22,9 @@
                     <td>
                         <p class="blockquote">{$c->nro_dni}</p>
                     </td>
-                    <td>----btn----</td>
+                    <td><form class="p-2" method='GET' action="collectors/collected/{$c->id_recolector}">
+                            <button type=submit class='btn btn-warning font-staat'>Ver info 👁️</button>
+                        </form></td>
                     <td><form class="p-2" method='POST' action="collectors/editar/{$c->id_recolector}">
                             <button type=submit class='btn btn-warning font-staat'>Editar 📝</button>
                         </form>

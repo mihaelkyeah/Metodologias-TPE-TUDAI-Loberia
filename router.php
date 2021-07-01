@@ -29,6 +29,7 @@ $router->addRoute('editar_material/:ID', 'POST', 'MaterialsController', 'showUpd
 $router->addRoute('editar/:ID', 'POST', 'MaterialsController', 'updateMaterial');
 $router->addRoute('collectors', 'GET', 'CollectorController', 'showListCollectors');
 $router->addRoute('collectors/editar/:ID', 'POST', 'CollectorController', 'showEditCollector');
+$router->addRoute('collectors/collected/:ID', 'GET', 'CollectorController', 'showCollectedMaterials');
 $router->addRoute('editar/recolector/:ID', 'POST', 'CollectorController', 'updateCollector');
 $router->addRoute('error/:ERROR', 'GET', 'controller', 'viewPageError');
 

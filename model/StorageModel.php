@@ -9,6 +9,11 @@ Class StorageModel extends Model{
         return $query->execute([$collector,$material,$date,$weight]);
     }
     
+    public function getStorageByCollector($id){
+        $query = $this->getDbConnection()->prepare('SELECT material, SUM(peso) as total FROM `deposito` WHERE `id_recolector` = ? GROUP BY material');
+        $query->execute([$id]);
+        return $query->fetchAll(PDO::FETCH_OBJ); 
+    }
 }
 
 ?>
