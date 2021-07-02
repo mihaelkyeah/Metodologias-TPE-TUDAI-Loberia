@@ -31,7 +31,9 @@ $router->addRoute('collectors', 'GET', 'CollectorController', 'showListCollector
 $router->addRoute('collectors/editar/:ID', 'POST', 'CollectorController', 'showEditCollector');
 $router->addRoute('collectors/collected/:ID', 'GET', 'CollectorController', 'showCollectedMaterials');
 $router->addRoute('editar/recolector/:ID', 'POST', 'CollectorController', 'updateCollector');
+$router->addRoute('collectors/DELETE/:ID', 'POST', 'CollectorController', 'deleteCollector');
 $router->addRoute('error/:ERROR', 'GET', 'controller', 'viewPageError');
+
 
 
 /**
