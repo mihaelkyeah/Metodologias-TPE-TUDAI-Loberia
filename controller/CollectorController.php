@@ -41,6 +41,13 @@ class CollectorController extends Controller
         }
     }
 
+    function showCollectedMaterials($param = []){
+        $id = intval($param[':ID']);
+        $collector = $this->getCollectorModel()->getCollectorData($id);
+        $materials = $this->getStorageModel()->getStorageByCollector($id);
+        $this->getCollectorView()->showCollectedMaterials($collector, $materials);
+    }
+
     function showError($error)
     {
         var_dump($error);

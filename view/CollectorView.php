@@ -18,4 +18,11 @@ class CollectorView extends View
         $this->getSmarty()->assign('collector', $collector);
         $this->getSmarty()->display('templates/formEditCollector.tpl');
     }
+
+    public function showCollectedMaterials($collector, $materials) {
+        $this->getSmarty()->assign('title', 'Aportes del recolector');
+        $this->getSmarty()->assign('collector', $collector);
+        $this->getSmarty()->assign('materials', $materials);
+        $this->getSmarty()->display('templates/showInfoContributionCollector.tpl');
+    }
 }
