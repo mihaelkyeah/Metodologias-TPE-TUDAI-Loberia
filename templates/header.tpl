@@ -20,6 +20,10 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Style css carpete-local-->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 
 <body>

@@ -52,4 +52,10 @@ class CollectorController extends Controller
         var_dump($success);
         die();
     }
+
+    function deleteCollector($params = [])
+    {
+        $id = $params[':ID'];
+        $this->getCollectorModel()->deleteCollector($id);
+    }
 }

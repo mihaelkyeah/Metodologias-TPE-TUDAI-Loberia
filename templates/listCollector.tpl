@@ -27,9 +27,16 @@
                             <button type=submit class='btn btn-warning font-staat'>Editar 📝</button>
                         </form>
                     </td>
-                    <td>----btn----</td>
-                </tr>
-            {/foreach}
-        </tbody>
-    </table>
+                    <td>
+                    <form class="p-2" method='POST' action="collectors/DELETE/{$c->id_recolector}" > 
+                        <button class="btn btn-danger font-staat" type="button" onclick="alertDelete({$c->id_recolector}, '{$c->nombre}', '{$c->apellido}' );">Eliminar ❌</button>
+                    </form>
+                </td>
+
+            </tr>
+        {/foreach}
+    </tbody>
+</table>
 </div>
+
+<script type="text/javascript" src="js/deleteCollector.js"></script>

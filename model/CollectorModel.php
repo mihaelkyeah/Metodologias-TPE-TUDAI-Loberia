@@ -20,6 +20,11 @@ Class CollectorModel extends Model{
         $query = $this->getDbConnection()->prepare('UPDATE `recolector` SET `nombre` = ?, `apellido` = ?, `nro_dni` = ?, `fecha_nacimiento` = ?, `vehiculo` = ? WHERE `id_recolector` = ?');
         return $query->execute([$nombre, $apellido, $dni, $fecha_nacimiento, $vehiculo, $id]);
     }
+
+    function deleteCollector($id){
+        $query = $this->getDbConnection()->prepare('DELETE FROM recolector WHERE id_recolector = ?');
+        return $query->execute([$id]);
+    }
     
 }
 
