@@ -28,6 +28,7 @@ $router->addRoute('info/DELETE/:ID', 'POST', 'MaterialsController', 'deleteMater
 $router->addRoute('editar_material/:ID', 'POST', 'MaterialsController', 'showUpdateMaterial');
 $router->addRoute('editar/:ID', 'POST', 'MaterialsController', 'updateMaterial');
 $router->addRoute('collectors', 'GET', 'CollectorController', 'showListCollectors');
+$router->addRoute('collectors', 'POST', 'CollectorController', 'newCollector');
 $router->addRoute('collectors/editar/:ID', 'POST', 'CollectorController', 'showEditCollector');
 $router->addRoute('collectors/collected/:ID', 'GET', 'CollectorController', 'showCollectedMaterials');
 $router->addRoute('editar/recolector/:ID', 'POST', 'CollectorController', 'updateCollector');

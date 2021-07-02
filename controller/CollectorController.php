@@ -12,13 +12,15 @@ class CollectorController extends Controller
         $this->getCollectorView()->showListCollectors($collectors);
     }
 
-    function showEditCollector($param = []) {
+    function showEditCollector($param = [])
+    {
         $id = intval($param[':ID']);
         $collector = $this->getCollectorModel()->getCollectorData($id);
         $this->getCollectorView()->showFormEditCollector($collector);
     }
 
-    function updateCollector($param = []) {
+    function updateCollector($param = [])
+    {
         $id = intval($param[':ID']);
         $nombre = $_POST['name'];
         $apellido = $_POST['surname'];
@@ -26,17 +28,18 @@ class CollectorController extends Controller
         $fecha_nacimiento = $_POST['birth_date'];
         $vehiculo = $_POST['vehicle'];
 
-        if(!empty($id)
-        && !empty($nombre)
-        && !empty($apellido)
-        && !empty($dni)
-        && !empty($fecha_nacimiento)
-        && !empty($vehiculo)) // VERIFICACIÓN COPMLETAMENTE INDISPENSABLE
+        if (
+            !empty($id)
+            && !empty($nombre)
+            && !empty($apellido)
+            && !empty($dni)
+            && !empty($fecha_nacimiento)
+            && !empty($vehiculo)
+        ) // VERIFICACIÓN COPMLETAMENTE INDISPENSABLE
             $success = $this->getCollectorModel()->updateCollector($id, $nombre, $apellido, $dni, $fecha_nacimiento, $vehiculo);
-        if($success) {
+        if ($success) {
             $this->showListCollectors();
-        }
-        else {
+        } else {
             $this->showError("Falta algún dato obligatorio del recolector que usted intentó editar.");
         }
     }
