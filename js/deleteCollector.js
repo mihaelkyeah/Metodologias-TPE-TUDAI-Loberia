@@ -11,12 +11,13 @@ function eliminar(id, apellido){
       Swal.fire(
         'Eliminado!',
         'El recolector ' +apellido+ ' fue eliminado de la Base de Datos.',
-        'success'
+        'success',
         )
-        window. location. reload();
-      }
-
-  });
+       // window. location.reload();   
+        //setTimeout(function(){ alert("Hello"); }, 3000);
+        setTimeout(() => { window.location.reload() }, 3000);
+      } 
+    });
 
 }
 
