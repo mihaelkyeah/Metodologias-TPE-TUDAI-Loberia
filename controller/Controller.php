@@ -4,12 +4,14 @@ require_once('model/CollectorModel.php');
 require_once('model/MaterialsModel.php');
 require_once('model/StorageModel.php');
 require_once('model/RequestModel.php');
+require_once('model/AdminModel.php');
 //VIEWS
 require_once('view/View.php');
 require_once('view/CollectorView.php');
 require_once('view/MaterialsView.php');
 require_once('view/RequestView.php');
 require_once('view/StorageView.php');
+require_once('view/AdminView.php');
 
 abstract class Controller
 {
@@ -18,12 +20,14 @@ abstract class Controller
     private $MaterialsModel;
     private $RequestModel;
     private $StorageModel;
+    private $AdminModel;
     //VIEWS
     private $View;
     private $CollectorView;
     private $MaterialstView;
     private $RequestView;
     private $StorageView;
+    private $AdminView;
 
     public function __construct()
     {
@@ -32,12 +36,14 @@ abstract class Controller
         $this->MaterialsModel = new MaterialsModel();
         $this->RequestModel = new RequestModel();
         $this->StorageModel = new StorageModel();
+        $this->AdminModel = new AdminModel();
         //VIEWS
         $this->View = new View();
         $this->CollectorView = new CollectorView();
         $this->MaterialsView = new MaterialsView();
         $this->RequestView = new RequestView();
         $this->StorageView = new StorageView();
+        $this->AdminView = new AdminView();
     }
     //===============MODELS===============//
     function getCollectorModel()
@@ -55,6 +61,10 @@ abstract class Controller
     function getStorageModel()
     {
         return $this->StorageModel;
+    }
+    function getAdminModel()
+    {
+        return $this->AdminModel;
     }
     //===============VIEWS===============//
     function getView()
@@ -76,6 +86,10 @@ abstract class Controller
     function getStorageView()
     {
         return $this->StorageView;
+    }
+    function getAdminView()
+    {
+        return $this->AdminView;
     }
     //===============FUNCIONS===============//
 

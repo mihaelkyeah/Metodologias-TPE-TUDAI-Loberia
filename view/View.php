@@ -9,7 +9,7 @@ class View
     public function __construct()
     {
         $this->smarty = new Smarty();
-
+        $this->getSmarty()->assign('isLogged', !Admin::checkLoggedIn());
         //BASE_URL es asignado aca porque es necesario que url llegue a todos los tamplates
         $this->getSmarty()->assign('url', BASE_URL);
     }

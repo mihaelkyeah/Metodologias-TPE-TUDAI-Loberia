@@ -35,6 +35,7 @@ Class RequestController extends Controller{
     }
 
     function showList(){
+        Admin::adminCheck();
         $list = $this->getRequestModel()->getList();
         $this->getRequestView()->showRequestList($list);
     }

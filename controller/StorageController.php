@@ -17,6 +17,7 @@ class StorageController extends Controller
 
     public function postMaterialWeight()
     {
+        Admin::adminCheck();
         $collector = $this->assignFieldValue($_POST['collector']); //id_collector reference
         $material = $this->assignFieldValue($_POST['material']);
         $date = $this->assignFieldValue($_POST['date']);
@@ -32,6 +33,7 @@ class StorageController extends Controller
 
     public function showMaterialWeight()
     {
+        Admin::adminCheck();
         $this->getStorageView()->showStorageFormView($this->collectors, $this->materials);
     }
 
