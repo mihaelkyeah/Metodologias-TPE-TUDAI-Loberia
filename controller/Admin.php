@@ -41,7 +41,10 @@ class Admin extends Controller
     }
 
     public static function adminCheck(){
-        self::checkLoggedIn() ? : header('location:' . BASE_URL . 'Home');
+        if(!self::checkLoggedIn()){
+            header('location:' . BASE_URL . 'Home'); 
+            die();
+        } 
     }
 
     /**

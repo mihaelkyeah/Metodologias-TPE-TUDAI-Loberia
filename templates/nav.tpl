@@ -22,7 +22,7 @@
                             info
                         </span></a>
                 </li>
-                {if ! $isLogged }
+                {if $isLogged }
                     <!--Menu Desplegable-->
                     <li class="nav-item dropdown navbar-nav p-1">
                         <a class="nav-link dropdown-toggle btn-dark font-staat" href="#" id="navbarDropdown" role="button"

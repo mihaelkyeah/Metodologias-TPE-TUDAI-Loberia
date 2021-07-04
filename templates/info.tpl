@@ -13,15 +13,17 @@
                     <div id="flush-collapseOne{$material->id_material}" class="accordion-collapse collapse"
                         aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="div-accordion-body text-center text-light">
-                            <div class="row text-center">
-                                <form class="col-6 p-2" method="POST" action="editar_material/{$material->id_material}">
-                                    <button class="btn btn-warning font-staat" type="submit">EDITAR 📝</button>
-                                </form>
-                                <form class=" col-6 p-2" method="POST" action="info/DELETE/{$material->id_material}">
-                                    <button class="btn btn-danger font-staat" type="submit">Eliminar ❌</button>
-                                </form>
-                            </div>
-                            <hr />
+                            {if $isLogged }
+                                <div class="row text-center">
+                                    <form class="col-6 p-2" method="POST" action="editar_material/{$material->id_material}">
+                                        <button class="btn btn-warning font-staat" type="submit">EDITAR 📝</button>
+                                    </form>
+                                    <form class=" col-6 p-2" method="POST" action="info/DELETE/{$material->id_material}">
+                                        <button class="btn btn-danger font-staat" type="submit">Eliminar ❌</button>
+                                    </form>
+                                </div>
+                                <hr />
+                            {/if}
                             {if {$material->img_path}!=null}
                                 <img src="{$material->img_path}" width="426px" height="240px">
                             {/if}
