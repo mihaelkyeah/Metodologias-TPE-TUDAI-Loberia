@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 25-06-2021 a las 07:06:32
--- Versión del servidor: 10.4.11-MariaDB
--- Versión de PHP: 7.4.5
+-- Servidor: localhost
+-- Tiempo de generación: 04-07-2021 a las 23:19:20
+-- Versión del servidor: 10.4.17-MariaDB
+-- Versión de PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,7 +42,9 @@ CREATE TABLE `deposito` (
 INSERT INTO `deposito` (`id_deposito`, `id_recolector`, `material`, `fecha`, `peso`) VALUES
 (1, 1, 'Tu vieja', 'no sé', 3.40282e38),
 (2, 1, 'Tu vieja', 'no sé', 3.40282e38),
-(3, 1, 'Tu vieja', 'no sé', 3.40282e38);
+(3, 1, 'Tu vieja', 'no sé', 3.40282e38),
+(4, 1, 'Cajas de cartón', '23/24/25', 20),
+(5, 2, 'Latas de aluminio', '23/24/25', 5);
 
 -- --------------------------------------------------------
 
@@ -114,7 +116,8 @@ CREATE TABLE `recolector` (
 --
 
 INSERT INTO `recolector` (`id_recolector`, `nombre`, `apellido`, `nro_dni`, `fecha_nacimiento`, `vehiculo`) VALUES
-(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A');
+(1, 'Vecino', 'Buena onda', '11111111', '01/01/1999', 'A'),
+(2, 'oscar', 'rodrigo', '22334455', '22/23/1995', 'A');
 
 --
 -- Disparadores `recolector`
@@ -125,6 +128,25 @@ SET id_recolector = 1
 WHERE deposito.id_recolector = OLD.id_recolector
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(55) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_user`, `username`, `password`) VALUES
+(1, 'Cecilia', '$2y$10$k39q5CEjg4I2GtS1NDfSGuTyZql7Qx.oBBwGSEgNyvuFLWmDBzOMS');
 
 --
 -- Índices para tablas volcadas
@@ -156,6 +178,13 @@ ALTER TABLE `recolector`
   ADD PRIMARY KEY (`id_recolector`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `UNIQUE_username` (`username`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -163,7 +192,7 @@ ALTER TABLE `recolector`
 -- AUTO_INCREMENT de la tabla `deposito`
 --
 ALTER TABLE `deposito`
-  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_deposito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `material`
@@ -181,7 +210,13 @@ ALTER TABLE `pedido_recoleccion`
 -- AUTO_INCREMENT de la tabla `recolector`
 --
 ALTER TABLE `recolector`
-  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_recolector` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
