@@ -5,7 +5,7 @@ Class Model{
     private $db;
 
     function __construct() {
-        $host = 'localhost:3308';
+        $host = 'localhost';
         $userName = 'root';
         $password = '';
         $database = 'cooperativa';
