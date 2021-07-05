@@ -26,6 +26,7 @@ class MaterialsController extends Controller
 
     public function deleteMaterial($param = [])
     {
+        Admin::adminCheck();
         $id = intval($param[':ID']);
 
         $this->getMaterialsModel()->delete($id);
@@ -34,6 +35,7 @@ class MaterialsController extends Controller
 
     public function showUpdateMaterial($param = [])
     {
+        Admin::adminCheck();
         $id = intval($param[':ID']);
         $data = $this->getMaterialsModel()->getMaterial($id);
         $this->getMateriasView()->showFormEditMaterials($data);
@@ -41,6 +43,7 @@ class MaterialsController extends Controller
 
     function updateMaterial($param = [])
     {
+        Admin::adminCheck();
         $id_material = intval($param[':ID']);
         $name = $_POST['name'];
         $delivery = $_POST['delivery'];
@@ -71,11 +74,13 @@ class MaterialsController extends Controller
 
     public function showFormNewMaterial()
     {
+        Admin::adminCheck();
         $this->getMateriasView()->showFormNewMaterial();
     }
 
     public function newMaterial()
     {
+        Admin::adminCheck();
         $url = null;
 
         if (isset($_POST['name']))  $name = $_POST['name'];
@@ -101,6 +106,7 @@ class MaterialsController extends Controller
     }
 
     public function parseYoutubeURL($url) {
+        Admin::adminCheck();
         $retorno = $url;
         for($i = 0; $i < 2; $i++) {
             if(str_contains($url,".com/watch?v="))

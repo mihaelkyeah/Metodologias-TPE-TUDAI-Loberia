@@ -8,6 +8,8 @@ require_once('controller/HomeController.php');
 require_once('controller/MaterialsController.php');
 require_once('controller/StorageController.php');
 require_once('controller/CollectorController.php');
+require_once('controller/Admin.php');
+
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
@@ -34,6 +36,9 @@ $router->addRoute('collectors/collected/:ID', 'GET', 'CollectorController', 'sho
 $router->addRoute('editar/recolector/:ID', 'POST', 'CollectorController', 'updateCollector');
 $router->addRoute('collectors/DELETE/:ID', 'POST', 'CollectorController', 'deleteCollector');
 $router->addRoute('error/:ERROR', 'GET', 'controller', 'viewPageError');
+$router->addRoute('login', 'GET', 'Admin', 'showLogin');
+$router->addRoute('login', 'POST', 'Admin', 'login');
+$router->addRoute('logout', 'GET', 'Admin', 'logout');
 
 
 

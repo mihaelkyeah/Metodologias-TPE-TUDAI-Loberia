@@ -7,6 +7,7 @@ class CollectorController extends Controller
 
     function showListCollectors()
     {
+        Admin::adminCheck();
         $collectors = $this->getCollectorModel()->getCollectors();
         array_shift($collectors);
         $this->getCollectorView()->showListCollectors($collectors);
@@ -14,6 +15,7 @@ class CollectorController extends Controller
 
     function showEditCollector($param = [])
     {
+        Admin::adminCheck();
         $id = intval($param[':ID']);
         $collector = $this->getCollectorModel()->getCollectorData($id);
         $this->getCollectorView()->showFormEditCollector($collector);
@@ -21,6 +23,7 @@ class CollectorController extends Controller
 
     function updateCollector($param = [])
     {
+        Admin::adminCheck();
         $id = intval($param[':ID']);
         $nombre = $_POST['name'];
         $apellido = $_POST['surname'];
@@ -45,6 +48,7 @@ class CollectorController extends Controller
     }
 
     function showCollectedMaterials($param = []){
+        Admin::adminCheck();
         $id = intval($param[':ID']);
         $collector = $this->getCollectorModel()->getCollectorData($id);
         $materials = $this->getStorageModel()->getStorageByCollector($id);
@@ -65,6 +69,7 @@ class CollectorController extends Controller
 
     function deleteCollector($params = [])
     {
+        Admin::adminCheck();
         $id = $params[':ID'];
         $this->getCollectorModel()->deleteCollector($id);
     }
