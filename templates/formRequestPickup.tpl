@@ -41,7 +41,7 @@
                         <span class="color-danger">*</span>
                         Teléfono</label>
                         <input name='phoneNumber' type="number" class="form-control font-input" placeholder="Telefono"
-                            aria-label="First name" min="0" max="2147483647" step="1" required>
+                            aria-label="First name" min="0" max="2147483647000000000" step="1" required>
                     </div>
                     <div>
                         <label class="input-group" for="phoneNumber">Franja horaria</label>
