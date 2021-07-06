@@ -1,11 +1,11 @@
 <?php
 
-require_once('controller/Controller.php');
+require_once 'controller/Controller.php';
 
 class CollectorController extends Controller
 {
 
-    function showListCollectors()
+    public function showListCollectors()
     {
         Admin::adminCheck();
         $collectors = $this->getCollectorModel()->getCollectors();
@@ -13,7 +13,7 @@ class CollectorController extends Controller
         $this->getCollectorView()->showListCollectors($collectors);
     }
 
-    function showEditCollector($param = [])
+    public function showEditCollector($param = [])
     {
         Admin::adminCheck();
         $id = intval($param[':ID']);
@@ -21,7 +21,7 @@ class CollectorController extends Controller
         $this->getCollectorView()->showFormEditCollector($collector);
     }
 
-    function updateCollector($param = [])
+    public function updateCollector($param = [])
     {
         Admin::adminCheck();
         $id = intval($param[':ID']);
@@ -39,7 +39,10 @@ class CollectorController extends Controller
             && !empty($fecha_nacimiento)
             && !empty($vehiculo)
         ) // VERIFICACIÓN COPMLETAMENTE INDISPENSABLE
+        {
             $success = $this->getCollectorModel()->updateCollector($id, $nombre, $apellido, $dni, $fecha_nacimiento, $vehiculo);
+        }
+
         if ($success) {
             $this->showListCollectors();
         } else {
@@ -47,7 +50,8 @@ class CollectorController extends Controller
         }
     }
 
-    function showCollectedMaterials($param = []){
+    public function showCollectedMaterials($param = [])
+    {
         Admin::adminCheck();
         $id = intval($param[':ID']);
         $collector = $this->getCollectorModel()->getCollectorData($id);
@@ -55,19 +59,46 @@ class CollectorController extends Controller
         $this->getCollectorView()->showCollectedMaterials($collector, $materials);
     }
 
-    function showError($error)
+    public function showError($error)
     {
         var_dump($error);
         die();
     }
 
-    function showSuccess($success)
+    public function showSuccess($success)
     {
         var_dump($success);
         die();
     }
 
-    function deleteCollector($params = [])
+    public function newCollector()
+    {
+
+        $nombre = $_POST['name'];
+        $apellido = $_POST['surname'];
+        $dni = $_POST['id_number'];
+        $fecha_nacimiento = $_POST['birth_date'];
+        $vehiculo = $_POST['vehicle'];
+
+        if (
+            !empty($nombre)
+            && !empty($apellido)
+            && !empty($dni)
+            && !empty($fecha_nacimiento)
+            && !empty($vehiculo)
+        ) // VERIFICACIÓN COPMLETAMENTE INDISPENSABLE
+        {
+            $success = $this->getCollectorModel()->addCollector($nombre, $apellido, $dni, $fecha_nacimiento, $vehiculo);
+        }
+
+        if ($success) {
+            $this->showListCollectors();
+        } else {
+            $this->showError("Falta algún dato obligatorio del recolector.");
+        }
+    }
+
+    public function deleteCollector($params = [])
     {
         Admin::adminCheck();
         $id = $params[':ID'];
